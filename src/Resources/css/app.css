@@ -1,0 +1,44 @@
+.title-name-custom {
+  font-family: 'Monoton', cursive;
+  letter-spacing: 8px;
+  font-size: 30px;
+  animation-name: moveInLeft;
+  -webkit-animation-name: moveInLeft;
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  display: inline-block;
+  transition-timing-function: ease-out;
+  -webkit-transition-timing-function: ease-out;
+}
+
+.subtitle-prof-custom {
+  letter-spacing: 3px;
+  animation-name: appear;
+  -web-kit-animation-name: appear;
+  animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+    -webkit-transform: translateY(60px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
