@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Image1 from './../../../Resources/images/Image1.jpg';
-import Image2 from './../../../Resources/images/Image2.jpg';
-import Image3 from './../../../Resources/images/Image3.jpg';
+import Image1 from './../../../Resources/images/Image1.png';
+import Image2 from './../../../Resources/images/Image2.png';
+import Image3 from './../../../Resources/images/Image3.png';
 import Image4 from './../../../Resources/images/Image4.jpg';
 import Image5 from './../../../Resources/images/Image5.jpg';
 import { firebaseExp } from './../../../firebase';
 import 'bulma/css/bulma.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
 
 class Bio extends Component {
   state = {
@@ -17,6 +19,7 @@ class Bio extends Component {
     firebaseExp.once('value').then(snapshot => {
       const about_me_title = snapshot.val().about_me.title;
       const about_me_description = snapshot.val().about_me.description;
+
       //console.log(about_me_title, about_me_description);
 
       this.setState({
@@ -34,71 +37,36 @@ class Bio extends Component {
             <div className="container">
               <div className="columns">
                 <div className="column is-half">
-                  <div className="tile is-ancestor">
-                    <div className="tile is-vertical is-8">
-                      <div className="tile">
-                        <div className="tile is-parent is-vertical">
-                          <article
-                            className="tile is-child notification is-primary"
-                            style={{
-                              background: `url(${Image1})`,
-                              backgroundPosition: 'right bottom',
-                              backgroundSize: 'cover'
-                            }}
-                          />
-                          <article
-                            className="tile is-child notification is-warning"
-                            style={{
-                              background: `url(${Image2})`,
-                              backgroundPosition: 'right bottom',
-                              backgroundSize: 'cover'
-                            }}
-                          />
-                        </div>
-                        <div className="tile is-parent">
-                          <article
-                            className="tile is-child notification is-info"
-                            style={{
-                              background: `url(${Image5})`,
-                              backgroundPosition: 'left bottom',
-                              backgroundSize: 'cover'
-                            }}
-                          />
-                          <div
-                            className="content"
-                            style={{ minHeight: '300px' }}
-                          />
-                        </div>
+                  {
+                    <Carousel
+                      showArrows={true}
+                      showStatus={false}
+                      showThumbs={false}
+                    >
+                      <div>
+                        <img src={Image1} />
+                        <p className="legend">
+                          My student from NCOC Ronald Nance
+                        </p>
                       </div>
-                      <div className="tile is-parent">
-                        <article
-                          className="tile is-child notification is-danger"
-                          style={{
-                            background: `url(${Image4})`,
-                            backgroundPosition: 'right top',
-                            backgroundSize: 'cover'
-                          }}
-                        >
-                          <div
-                            className="content"
-                            style={{ minHeight: '150px' }}
-                          />
-                        </article>
+                      <div>
+                        <img src={Image2} />
+                        <p className="legend">Playing bowling with collegues</p>
                       </div>
-                    </div>
-                    <div className="tile is-parent">
-                      <article
-                        className="tile is-child notification is-success"
-                        style={{
-                          background: `url(${Image3})`,
-                          backgroundPosition: 'center',
-                          backgroundSize: 'cover'
-                        }}
-                      >
-                        <div className="content" />
-                      </article>
-                    </div>
-                  </div>
+                      <div>
+                        <img src={Image3} />
+                        <p className="legend">Breathing in fresh air</p>
+                      </div>
+                      <div>
+                        <img src={Image4} />
+                        <p className="legend">With my teachers-students</p>
+                      </div>
+                      <div>
+                        <img src={Image5} />
+                        <p className="legend">My fellow teachers</p>
+                      </div>
+                    </Carousel>
+                  }
                 </div>
 
                 <div className="column is-half">
