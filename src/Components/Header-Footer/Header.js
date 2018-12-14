@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import 'bulma/css/bulma.css';
 
 const Header = () => {
   return (
@@ -14,7 +15,10 @@ const Header = () => {
             Home
           </Link>
           <Link to="/my_experience" className="navbar-item has-text-grey-light">
-            Biography
+            Career
+          </Link>
+          <Link to="/my_education" className="navbar-item has-text-grey-light">
+            Education
           </Link>
           <Link to="/projects" className="navbar-item has-text-grey-light">
             Projects

@@ -6,6 +6,7 @@ import Image3 from './../../../Resources/images/Image3.jpg';
 import Image4 from './../../../Resources/images/Image4.jpg';
 import Image5 from './../../../Resources/images/Image5.jpg';
 import { firebaseExp } from './../../../firebase';
+import 'bulma/css/bulma.css';
 
 class Bio extends Component {
   state = {

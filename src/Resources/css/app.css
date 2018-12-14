@@ -19,6 +19,10 @@
   -webkit-animation-duration: 3s;
 }
 
+.padding-custom-30 {
+  padding-bottom: 30px;
+}
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
