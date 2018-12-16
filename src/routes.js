@@ -3,7 +3,7 @@ import Layout from './Hoc/Layout';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from './Components/home';
-import Experience from './Components/home/experience/Experience';
+import Experience from './Components/experience/Experience';
 
 const Routes = props => {
   return (

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { firebaseExp } from '../../../firebase';
-import { firebaseLooper } from '../../ui/misc';
+import { firebaseExp } from '../../firebase';
+import { firebaseLooper } from '../ui/misc';
 import 'bulma/css/bulma.css';
-import TimelineTemplate from '../../ui/timelineTemplate';
+import TimelineTemplate from '../ui/timelineTemplate';
 
 class Experience extends Component {
   state = {
