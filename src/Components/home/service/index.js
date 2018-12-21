@@ -44,6 +44,20 @@ const Service = () => {
                       English
                     </span>
                   </h3>
+                  <ul>
+                    <li className="has-text-centered is-uppercase">
+                      Modern Books
+                    </li>
+                    <li className="has-text-centered is-uppercase">
+                      Communicative approach
+                    </li>
+                    <li className="has-text-centered is-uppercase">
+                      Technology-enriched learning process
+                    </li>
+                    <li className="has-text-centered is-uppercase">
+                      Engaging Activities
+                    </li>
+                  </ul>
                 </div>
               </div>
               <div className="column">
@@ -53,6 +67,20 @@ const Service = () => {
                       Russian
                     </span>
                   </h3>
+                  <ul>
+                    <li className="has-text-centered is-uppercase">
+                      Modern Books
+                    </li>
+                    <li className="has-text-centered is-uppercase">
+                      Communicative approach
+                    </li>
+                    <li className="has-text-centered is-uppercase">
+                      Technology-enriched learning process
+                    </li>
+                    <li className="has-text-centered is-uppercase">
+                      Engaging Activities
+                    </li>
+                  </ul>
                 </div>
               </div>
               <div className="column">
@@ -62,6 +90,20 @@ const Service = () => {
                       Programming
                     </span>
                   </h3>
+                  <ul>
+                    <li className="has-text-centered is-uppercase">
+                      Modern Books
+                    </li>
+                    <li className="has-text-centered is-uppercase">
+                      Communicative approach
+                    </li>
+                    <li className="has-text-centered is-uppercase">
+                      Technology-enriched learning process
+                    </li>
+                    <li className="has-text-centered is-uppercase">
+                      Engaging Activities
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

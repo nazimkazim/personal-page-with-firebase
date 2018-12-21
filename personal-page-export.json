@@ -1,0 +1,129 @@
+{
+	"experience": {
+		"about_me":{
+			"title":"About me",
+			"description":"Having degrees both in Engineering and Linguistics, I have problem-solving and communicative skills. Last more than 6 years I have been working as an educator specializing in teaching languages and programming. My clients include employees from companies like 'Exxon Mobile', 'Shell', 'CCC', 'Kentech', 'Total', 'KazMunaiGas' and so on"
+		},
+		"-LEmaPHHgI3SgqTKu9u6": {
+			"company": "Medical Company Suncar",
+			"city": "Almaty",
+			"date_start": "2012-03-15",
+			"date_finish": "2015-10-01",
+			"current": "No",
+			"title": "Translator",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed tellus rhoncus, rutrum ligula non, consequat eros. Pellentesque condimentum, libero tempor pulvinar semper, nulla felis rutrum ex, nec pellentesque dui risus non massa. Ut accumsan dignissim nisi, quis maximus est vulputate sit amet. Suspendisse est tortor, tincidunt semper sodales sit amet, pulvinar eu enim. Nulla vitae dui id purus bibendum interdum. Vestibulum at lorem risus. Aliquam ultrices at libero vitae maximus. Curabitur et pellentesque metus."
+		},
+		"-LEmaPHWXzdUZ_5ohJPa": {
+			"company": "Integral Design",
+			"city": "Almaty",
+			"date_start": "2016-01-01",
+			"date_finish": "2017-04-15",
+			"current": "No",
+			"title": "Translator/English Teacher",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed tellus rhoncus, rutrum ligula non, consequat eros. Pellentesque condimentum, libero tempor pulvinar semper, nulla felis rutrum ex, nec pellentesque dui risus non massa. Ut accumsan dignissim nisi, quis maximus est vulputate sit amet. Suspendisse est tortor, tincidunt semper sodales sit amet, pulvinar eu enim. Nulla vitae dui id purus bibendum interdum. Vestibulum at lorem risus. Aliquam ultrices at libero vitae maximus. Curabitur et pellentesque metus."
+
+		},
+		"-LEmaPHYAYfVEsQETNZc": {
+			"company": "StudyInn",
+			"city": "Kostanai",
+			"date_start": "2017-07-29",
+			"date_finish": "2017-12-27",
+			"current": "No",
+			"title": "English Trainer",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed tellus rhoncus, rutrum ligula non, consequat eros. Pellentesque condimentum, libero tempor pulvinar semper, nulla felis rutrum ex, nec pellentesque dui risus non massa. Ut accumsan dignissim nisi, quis maximus est vulputate sit amet. Suspendisse est tortor, tincidunt semper sodales sit amet, pulvinar eu enim. Nulla vitae dui id purus bibendum interdum. Vestibulum at lorem risus. Aliquam ultrices at libero vitae maximus. Curabitur et pellentesque metus."
+		},
+		"-LEmaPHZ37QJL1IWficV": {
+			"company": "Caspian Training Group",
+			"city": "Atyrau",
+			"date_start": "2018-02-19",
+			"date_finish": "-",
+			"current": "Yes",
+			"title": "English Teacher/Russian Teacher/Programming Teacher",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed tellus rhoncus, rutrum ligula non, consequat eros. Pellentesque condimentum, libero tempor pulvinar semper, nulla felis rutrum ex, nec pellentesque dui risus non massa. Ut accumsan dignissim nisi, quis maximus est vulputate sit amet. Suspendisse est tortor, tincidunt semper sodales sit amet, pulvinar eu enim. Nulla vitae dui id purus bibendum interdum. Vestibulum at lorem risus. Aliquam ultrices at libero vitae maximus. Curabitur et pellentesque metus."
+		}
+	},
+	"projects": {
+		"-LEvJ6w8YuUXtU6K3G2I": {
+			"image": "8db4a774-40f4-462c-873e-197699360ffc.png",
+			"project_name": "To do list",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+		},
+		"-LEvJNVy2UXDdYIa-iw8": {
+			"image": "c0aa5747-1109-41ac-a5be-d1e61186d66c.png",
+			"project_name": "Javascipt Game",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+		},
+		"-LEvJX0DU85wQE7CoRvT": {
+			"image": "1bc2e700-8285-4b3d-8377-63b20f7d11c1.png",
+			"project_name": "Calculator Game",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+		}
+	},
+	"reviews": {
+		"-LEu6H7cllCT8Xv3CFil": {
+			"image": "1bc2e700-8285-4b3d-8377-63b20f7d11c1.png",
+			"name": "Ron Nance",
+			"company": "NCOC",
+			"title": "New Develoments Manager",
+			"description":"Fusce viverra dui eu quam rutrum rhoncus id eget urna. Integer commodo enim a malesuada aliquet. Sed pellentesque in libero sit amet egestas. Pellentesque eu quam id mauris mollis pulvinar at quis ipsum. Sed augue massa, molestie sit amet lacus et, gravida tempor nunc. Class aptent taciti sociosqu ad litora."
+		},
+		"-LEu6H7gyI75bVJEeec_": {
+			"image": "1bc2e700-8285-4b3d-8377-63b20f7d11c1.png",
+			"name": "Ivo Albeerts",
+			"company": "NCOC",
+			"title": "IT Manager",
+			"description":"Proin vel lectus ipsum. Phasellus quis posuere lacus, vel faucibus tortor. Nullam vel lacus odio. Aliquam elementum arcu id lectus blandit auctor. Curabitur non quam et libero dictum vehicula. Suspendisse finibus sit amet leo dignissim faucibus. Morbi imperdiet commodo felis, eget efficitur erat ultrices a. Nam interdum tempus lacinia. Vivamus."
+		},
+		"-LElLVq1OW7HqJ9VknkW": {
+			"image": "1bc2e700-8285-4b3d-8377-63b20f7d11c1.png",
+			"name": "Baurzhan Kumar",
+			"company": "NCOC",
+			"title": "Regulation Manager",
+			"description":"Suspendisse bibendum ac tellus non tempus. Phasellus diam augue, venenatis non lorem vel, rhoncus tempus urna. Suspendisse elementum risus at lorem consectetur semper vitae in nulla. Duis venenatis porttitor nisi sit amet luctus. Nulla facilisi. Praesent lectus tortor, semper et nibh sit amet, lacinia malesuada arcu. Mauris consectetur imperdiet mauris."
+		},
+		"-LElLVq1OWg4g4g4ggdg": {
+			"image": "1bc2e700-8285-4b3d-8377-63b20f7d11c1.png",
+			"name": "Eric Haard",
+			"company": "NCOC",
+			"title": "Rotation Equipments Head",
+			"description":"Nulla ac orci non tellus maximus convallis. Quisque venenatis mi hendrerit, facilisis ligula et, tincidunt dolor. Nullam sit amet lacus leo. Proin nisl mauris, vulputate venenatis nibh at, ultrices ultricies leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras mollis gravida nulla eu bibendum."
+		},
+		"-LElLVq1OWgkfdkg5gg3": {
+			"image": "1bc2e700-8285-4b3d-8377-63b20f7d11c1.png",
+			"name": "Cyril Santoni",
+			"company": "NCOC",
+			"title": "Safety engineer",
+			"description":"Etiam egestas cursus sapien sed pulvinar. Sed id tincidunt tellus. Nam malesuada bibendum nisl, vel vestibulum orci iaculis nec. Cras ac quam at ligula condimentum elementum non et est. Vivamus non pulvinar leo. Maecenas viverra sem nec vulputate commodo. Mauris purus dui, blandit quis enim sit amet, congue iaculis urna."
+		}
+	},
+	"promotions": {
+		"-LElLVq1OW7HqJ9VknkW": {
+			"email": "francis@gmail.com"
+		},
+		"-LElNgEz2uQoWVUb4-EN": {
+			"email": "francis@gmail.coms"
+		},
+		"-LElTuxTAaN5GfRKiIt6": {
+			"email": "ffff@gmail.com"
+		},
+		"-LElUbwMIAH0EXXI1aBv": {
+			"email": "fvdf@gmail.com"
+		},
+		"-LGOCK96ANC6rYw_cTs2": {
+			"email": "fernando.martin.lobo@gmail.com"
+		},
+		"-LGOCOtmxuRuLSeM394W": {
+			"email": "sdsddf@gmail.com"
+		},
+		"-LGOCoj54chsoKQOyI0U": {
+			"email": "sdfsdf@gmail.com"
+		},
+		"-LGX1pjgUr5gC0dWCsqe": {
+			"email": "gagga@ha.com"
+		},
+		"-LGXwrWyaP_JNnMGzhNe": {
+			"email": "sss@gmail.com"
+		}
+
+	}
+}
