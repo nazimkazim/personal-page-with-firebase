@@ -35,12 +35,36 @@ const Card = ({ review }) => {
         class="slide-label-rev"
       />
       <div class="slide-content-rev padded">
-        <span style={{ display: 'inline' }}>
-          <h1 style={{ color: 'black' }}>{review.company}</h1>
-          <h1 style={{ color: 'black' }}>{review.name}</h1>
-        </span>
+        <div>
+          <span>
+            <h1
+              className="is-uppercase has-text-weight-bold"
+              style={{ color: 'black' }}
+            >
+              {review.name}
+            </h1>
+          </span>
+        </div>
+        <div>
+          <span>
+            <h1
+              className="has-text-weight-light"
+              style={{ color: 'black', display: 'inline-block' }}
+            >
+              {review.title}
+            </h1>
+          </span>
+          {', '}
+          <span>
+            <h1
+              className="has-text-weight-light"
+              style={{ color: 'black', display: 'inline-block' }}
+            >
+              {review.company}
+            </h1>
+          </span>
+        </div>
 
-        <h1 style={{ color: 'black' }}>{review.title}</h1>
         <p style={{ color: 'black' }}>{review.description}</p>
       </div>
     </React.Fragment>

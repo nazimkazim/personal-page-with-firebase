@@ -8,6 +8,7 @@
     "bulma": "^0.7.2",
     "bulma-extensions": "^4.0.0",
     "bulma-timeline": "^3.0.0",
+    "classnames": "^2.2.6",
     "d3-ease": "^1.0.3",
     "firebase": "^5.0.4",
     "material-auto-rotating-carousel": "^2.1.0",

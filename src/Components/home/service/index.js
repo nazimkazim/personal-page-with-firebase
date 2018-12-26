@@ -6,23 +6,12 @@ const Service = () => {
     width: '300px',
     height: '300px',
     margin: '0 auto',
-    backgroundColor: 'hsl(0, 0%, 86%)'
-  };
-
-  const filteredBck = {
-    backgroundImage: `url(${bckImg})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'top',
-    backgroundSize: 'cover'
+    boxShadow: `0px 7px 19px -2px rgba(0,0,0,0.44)`
   };
 
   const margin = {
     marginTop: '50px',
     marginBottom: '50px'
-  };
-
-  const cardBck = {
-    backgroundColor: 'hsl(0, 0%, 71%)'
   };
 
   return (
@@ -31,7 +20,7 @@ const Service = () => {
         <div class="hero-body">
           <div class="container">
             <h2
-              className="has-text-centered is-size-2 has-text-info has-text-weight-semibold is-uppercase"
+              className="has-text-centered is-size-3 has-text-info has-text-weight-semibold is-uppercase"
               style={margin}
             >
               I can help you with
