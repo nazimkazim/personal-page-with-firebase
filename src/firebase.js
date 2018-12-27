@@ -16,5 +16,6 @@ firebase.initializeApp(config);
 const firebaseDB = firebase.database();
 const firebaseExp = firebaseDB.ref('experience');
 const firebaseRevs = firebaseDB.ref('reviews');
+const firebasePromotions = firebaseDB.ref('promotions');
 
-export { firebase, firebaseExp, firebaseRevs };
+export { firebase, firebaseExp, firebaseRevs, firebasePromotions };

@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import Card from '../../ui/card';
-import Enroll from '../promotion/Enroll';
 import { firebaseRevs } from '../../../firebase';
 import { firebaseLooper } from '../../ui/misc';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import classNames from 'classnames';
+import ContactMe from '../promotion/index';
 
 class Review extends Component {
   state = {
-    reviews: [],
-    isActive: ''
+    reviews: []
   };
 
   componentDidMount() {
@@ -31,18 +29,6 @@ class Review extends Component {
         ))
       : null;
 
-  modalOpen = () => {
-    this.setState({
-      isActive: 'is-active'
-    });
-  };
-
-  modalClose = () => {
-    this.setState({
-      isActive: ''
-    });
-  };
-
   render() {
     return (
       <section class="hero is-fullheight">
@@ -58,36 +44,7 @@ class Review extends Component {
                     {this.showReviews(this.state.reviews)}
                   </div>
                 </div>
-                <div className="has-text-centered">
-                  <button
-                    className="button is-success is-medium"
-                    onClick={this.modalOpen}
-                  >
-                    Contact me
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className={classNames('modal', this.state.isActive)}>
-              <div className="modal-background" />
-              <div className="modal-card">
-                <header className="modal-card-head">
-                  <p className="modal-card-title has-text-centered">
-                    Please tell something about yourself
-                  </p>
-                  <button
-                    className="delete"
-                    onClick={this.modalClose}
-                    aria-label="close"
-                  />
-                </header>
-                <section className="modal-card-body">
-                  <Enroll />
-                </section>
-                <footer className="modal-card-foot">
-                  <button className="button is-success">Save changes</button>
-                  <button className="button">Cancel</button>
-                </footer>
+                <ContactMe />
               </div>
             </div>
           </div>
