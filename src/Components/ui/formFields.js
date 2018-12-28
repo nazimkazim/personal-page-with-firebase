@@ -26,12 +26,6 @@ const FormField = ({ id, formdata, change }) => {
               onChange={event => change({ event, id })}
               className="input"
             />
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope" />
-            </span>
-            <span class="icon is-small is-right">
-              <i class="fas fa-check" />
-            </span>
             {showError()}
           </React.Fragment>
         );
