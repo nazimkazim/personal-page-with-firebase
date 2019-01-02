@@ -9,6 +9,16 @@ export const firebaseLooper = snapshot => {
   return data;
 };
 
+export const reverseArray = actualArr => {
+  let reversedArray = [];
+
+  for (let i = actualArr.length - 1; i >= 0; i--) {
+    reversedArray.push(actualArr[i]);
+  }
+
+  return reversedArray;
+};
+
 export const validate = element => {
   let error = [true, ''];
 

@@ -99,9 +99,9 @@ class SignIn extends Component {
       marginBottom: '20px'
     };
     return (
-      <section class="hero has-background-light is-fullheight">
-        <div class="hero-body">
-          <div class="container">
+      <section className="hero has-background-light is-fullheight">
+        <div className="hero-body">
+          <div className="container">
             <div className="columns">
               <div
                 className="column is-half
@@ -129,9 +129,9 @@ is-offset-one-quarter"
                     </div>
                   </div>
 
-                  <div class="field">
-                    <label class="label">Email</label>
-                    <div class="control">
+                  <div className="field">
+                    <label className="label">Email</label>
+                    <div className="control">
                       <FormField
                         id={'email'}
                         formdata={this.state.formdata.email}

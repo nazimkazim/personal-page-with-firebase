@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Card from '../../ui/card';
 import { firebaseRevs } from '../../../firebase';
-import { firebaseLooper } from '../../ui/misc';
+import { firebaseLooper, reverseArray } from '../../ui/misc';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import ContactMe from '../promotion/index';
 
@@ -13,9 +13,8 @@ class Review extends Component {
   componentDidMount() {
     firebaseRevs.once('value').then(snapshot => {
       const reviews = firebaseLooper(snapshot);
-
       this.setState({
-        reviews
+        reviews: reverseArray(reviews)
       });
     });
   }

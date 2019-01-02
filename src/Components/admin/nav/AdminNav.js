@@ -5,29 +5,45 @@ import { firebase } from '../../../firebase';
 const AdminNav = () => {
   const links = [
     {
-      title: 'Matches',
-      linkTo: '/admin_matches'
+      title: 'Experience',
+      linkTo: '/admin_experience'
     },
     {
-      title: 'Add Match',
-      linkTo: '/admin_matches/edit_match'
+      title: 'Add Experience',
+      linkTo: '/admin_experience/edit_experience'
     },
     {
-      title: 'Players',
-      linkTo: '/admin_players'
+      title: 'Education',
+      linkTo: '/admin_education'
     },
     {
-      title: 'Add Players',
-      linkTo: '/admin_players/add_players'
+      title: 'Add Education',
+      linkTo: '/admin_education/add_education'
+    },
+    {
+      title: 'Reviews',
+      linkTo: '/admin_reviews'
+    },
+    {
+      title: 'Add Reviews',
+      linkTo: '/admin_reviews/add_reviews'
+    },
+    {
+      title: 'Projects',
+      linkTo: '/admin_projects'
+    },
+    {
+      title: 'Add Projects',
+      linkTo: '/admin_projects/add_projects'
     }
   ];
 
   const renderItems = () =>
     links.map(link => (
       <Link to={link.linkTo} key={link.title}>
-        <a class="panel-block">
-          <span class="panel-icon">
-            <i class="fas fa-user-edit" aria-hidden="true" />
+        <a className="panel-block">
+          <span className="panel-icon">
+            <i className="fas fa-user-edit" aria-hidden="true" />
           </span>
           {link.title}
         </a>
@@ -52,9 +68,9 @@ const AdminNav = () => {
     <div>
       <nav className="panel">
         {renderItems()}
-        <div class="panel-block">
+        <div className="panel-block">
           <button
-            class="button is-link is-outlined is-fullwidth"
+            className="button is-link is-outlined is-fullwidth"
             onClick={() => {
               logoutHandler();
             }}

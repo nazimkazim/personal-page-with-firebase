@@ -13,6 +13,12 @@ const FormField = ({ id, formdata, change }) => {
     return errorMessage;
   };
 
+  const tagMargin = {
+    marginTop: '10px',
+    marginBottom: '10px',
+    fontSize: '14px'
+  };
+
   const renderTemplate = () => {
     let formTemplate = null;
 
@@ -20,12 +26,74 @@ const FormField = ({ id, formdata, change }) => {
       case 'input':
         formTemplate = (
           <React.Fragment>
-            <input
-              {...formdata.config}
-              value={formdata.value}
-              onChange={event => change({ event, id })}
-              className="input"
-            />
+            {formdata.showLabel ? (
+              <span className="tag is-info" style={tagMargin}>
+                {formdata.config.label}
+              </span>
+            ) : null}
+            <div className="field">
+              <div className="control">
+                <input
+                  {...formdata.config}
+                  value={formdata.value}
+                  onChange={event => change({ event, id })}
+                  className="input"
+                  placeholder={formdata.config.placeholder}
+                />
+                {showError()}
+              </div>
+            </div>
+          </React.Fragment>
+        );
+        break;
+      case 'select':
+        formTemplate = (
+          <React.Fragment>
+            {formdata.showLabel ? (
+              <span className="tag is-info" style={tagMargin}>
+                {formdata.config.label}
+              </span>
+            ) : null}
+            <div className="field">
+              <div className="control">
+                <div className="select is-primary">
+                  <select
+                    value={formdata.value}
+                    onChange={event => change({ event, id })}
+                  >
+                    <option value="">Select one</option>
+                    {formdata.config.options.map(item => (
+                      <option key={item.key} value={item.key}>
+                        {item.value}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+            {showError()}
+          </React.Fragment>
+        );
+        break;
+      case 'textarea':
+        formTemplate = (
+          <React.Fragment>
+            {formdata.showLabel ? (
+              <span className="tag is-info" style={tagMargin}>
+                {formdata.config.label}
+              </span>
+            ) : null}
+            <div className="field">
+              <div className="control">
+                <textarea
+                  className="textarea is-primary"
+                  {...formdata.config}
+                  value={formdata.value}
+                  onChange={event => change({ event, id })}
+                  placeholder={formdata.config.placeholder}
+                />
+              </div>
+            </div>
             {showError()}
           </React.Fragment>
         );
@@ -36,7 +104,7 @@ const FormField = ({ id, formdata, change }) => {
 
     return formTemplate;
   };
-  return <div>{renderTemplate()}</div>;
+  return <React.Fragment>{renderTemplate()}</React.Fragment>;
 };
 
 export default FormField;

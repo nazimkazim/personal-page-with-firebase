@@ -19,6 +19,10 @@ const TimelineTemplate = ({ experience }) => {
           <span className="is-size-6 has-text-grey-dark">
             <strong>{experience.company.toUpperCase()}</strong>
           </span>
+          <br />
+          <span className="is-size-7 has-text-grey-dark has-text-weight-semibold">
+            {experience.city.toUpperCase()}
+          </span>
         </p>
         <p>
           <span className="is-size-5 has-text-success">{experience.title}</span>

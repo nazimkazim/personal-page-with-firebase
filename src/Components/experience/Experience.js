@@ -3,6 +3,7 @@ import { firebaseExp } from '../../firebase';
 import { firebaseLooper } from '../ui/misc';
 import 'bulma/css/bulma.css';
 import TimelineTemplate from '../ui/timelineTemplate';
+import { reverseArray } from '../ui/misc';
 
 class Experience extends Component {
   state = {
@@ -14,7 +15,7 @@ class Experience extends Component {
       const experiences = firebaseLooper(snapshot);
 
       this.setState({
-        experiences: experiences.slice(0, experiences.length - 1)
+        experiences: reverseArray(experiences.slice(0, experiences.length - 1))
       });
     });
   }

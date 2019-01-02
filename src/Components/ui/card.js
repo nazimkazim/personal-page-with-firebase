@@ -3,25 +3,6 @@ import React from 'react';
 const Card = ({ review }) => {
   return (
     <React.Fragment>
-      {/* <article class="media">
-        <figure class="media-left">
-          <p class="image is-64x64">
-            <img src="https://bulma.io/images/placeholders/128x128.png" />
-          </p>
-        </figure>
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <strong>{review.name}</strong>
-              {','} <strong>{review.company}</strong>
-              {','} <strong>{review.title}</strong>
-              <br />
-              {review.description}
-            </p>
-          </div>
-        </div>
-      </article> */}
-
       <input
         type="radio"
         name="slide-switches"
