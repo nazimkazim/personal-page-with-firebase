@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import AdminLayout from '../../../Hoc/AdminLayout';
 import FormField from '../../ui/formFields';
 import { validate } from '../../ui/misc';
+import { firebaseExp, firebaseDB } from '../../../firebase';
+import { firebaseLooper } from '../../ui/misc';
 
 class addEditExperience extends Component {
   state = {
-    matchId: '',
+    expId: '',
     formType: '',
     formError: false,
     formSuccess: '',
@@ -91,12 +93,12 @@ class addEditExperience extends Component {
         validationMessage: '',
         showLabel: true
       },
-      position: {
+      title: {
         element: 'input',
         value: '',
         config: {
           label: 'Type your position',
-          name: 'position',
+          name: 'title',
           type: 'text',
           placeholder: 'Manager, Engineer, Teacher'
         },
@@ -125,10 +127,92 @@ class addEditExperience extends Component {
       }
     }
   };
+
+  updateForm(element) {
+    const newFormdata = {
+      ...this.state.formdata
+    };
+
+    const newElement = { ...newFormdata[element.id] };
+
+    newElement.value = element.event.target.value;
+    let validData = validate(newElement);
+    newElement.valid = validData[0];
+    newElement.validationMessage = validData[1];
+    newFormdata[element.id] = newElement;
+    //console.log(newFormdata);
+
+    this.setState({
+      formError: false,
+      formdata: newFormdata
+    });
+  }
+
+  updateFields(experience, currentOptions, experiences, type, expId) {
+    const newFormdata = {
+      ...this.state.formdata
+    };
+
+    for (let key in newFormdata) {
+      if (experience) {
+        newFormdata[key].value = experience[key];
+        newFormdata[key].valid = true;
+      }
+
+      if (key === 'current') {
+        newFormdata[key].config.options = currentOptions;
+      }
+    }
+    this.setState({
+      expId,
+      formType: type,
+      formdata: newFormdata,
+      experiences
+    });
+  }
+
+  componentDidMount() {
+    const expId = this.props.match.params.id;
+    const getExperiences = (experience, type) => {
+      firebaseExp.once('value').then(snapshot => {
+        const experiences = firebaseLooper(snapshot);
+        const currentOptions = [];
+        snapshot.forEach(childSnapshot => {
+          currentOptions.push({
+            key: childSnapshot.val().current,
+            value: childSnapshot.val().current
+          });
+        });
+        this.updateFields(experience, currentOptions, experiences, type, expId);
+        //console.log(experiences);
+        //console.log(currentOptions);
+      });
+    };
+
+    if (!expId) {
+      // Add experience
+    } else {
+      // Edit experience
+      firebaseDB
+        .ref(`experience/${expId}`)
+        .once('value')
+        .then(snapshot => {
+          const experience = snapshot.val();
+          getExperiences(experience, 'Edit experience');
+          //console.log(experience);
+        });
+    }
+  }
+
   render() {
     return (
       <AdminLayout>
-        <h2>{this.state.formType}</h2>
+        <h2
+          className="tag is-primary is-size-5 is-uppercase"
+          style={{ marginTop: '10px' }}
+        >
+          {this.state.formType}
+        </h2>
         <div className="container is-fluid">
           <div className="columns">
             <div className="column is-three-fifths is-offset-one-fifth">
@@ -160,8 +244,8 @@ class addEditExperience extends Component {
                   change={element => this.updateForm(element)}
                 />
                 <FormField
-                  id={'position'}
-                  formdata={this.state.formdata.position}
+                  id={'title'}
+                  formdata={this.state.formdata.title}
                   change={element => this.updateForm(element)}
                 />
                 <FormField

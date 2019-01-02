@@ -19,4 +19,4 @@ const firebaseExp = firebaseDB.ref('experience');
 const firebaseRevs = firebaseDB.ref('reviews');
 const firebasePromotions = firebaseDB.ref('promotions');
 
-export { firebase, firebaseExp, firebaseRevs, firebasePromotions };
+export { firebase, firebaseExp, firebaseRevs, firebasePromotions, firebaseDB };
