@@ -5,6 +5,8 @@ import { firebaseExp } from '../../../firebase';
 import { firebaseLooper, reverseArray } from '../../ui/misc';
 import { css } from 'react-emotion';
 import { BarLoader } from 'react-spinners';
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class AdminExperience extends Component {
   state = {
@@ -40,13 +42,30 @@ class AdminExperience extends Component {
 
   deleteItem(event, experience) {
     event.preventDefault();
-    firebaseExp
-      .child(experience.id)
-      .remove()
-      .then(() => {
-        this.successForm('Removed successfully');
-        this.props.history.push('/admin_experience');
-      });
+    confirmAlert({
+      title: 'Confirm to submit',
+      message: 'Are you sure to do this.',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => {
+            firebaseExp
+              .child(experience.id)
+              .remove()
+              .then(() => {
+                this.successForm('Removed successfully');
+                this.props.history.push('/admin_experience');
+              });
+          }
+        },
+        {
+          label: 'No',
+          onClick: () => {
+            return false;
+          }
+        }
+      ]
+    });
   }
 
   render() {
