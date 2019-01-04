@@ -24,6 +24,12 @@ const Routes = props => {
         />
         <PrivateRoutes
           {...props}
+          path="/admin_experience/edit_experience"
+          exact
+          component={AddEditExperience}
+        />
+        <PrivateRoutes
+          {...props}
           path="/admin_experience/edit_experience/:id"
           exact
           component={AddEditExperience}

@@ -42,25 +42,6 @@ class addEditExperience extends Component {
         validationMessage: '',
         showLabel: true
       },
-      current: {
-        element: 'select',
-        value: '',
-        config: {
-          label: 'Select yes if it is your current job',
-          name: 'select_current',
-          type: 'select',
-          options: [
-            { key: 'true', value: 'yes' },
-            { key: 'false', value: 'no' }
-          ]
-        },
-        validation: {
-          required: true
-        },
-        valid: false,
-        validationMessage: '',
-        showLabel: true
-      },
       city: {
         element: 'input',
         value: '',
@@ -148,7 +129,7 @@ class addEditExperience extends Component {
     });
   }
 
-  updateFields(experience, currentOptions, experiences, type, expId) {
+  updateFields(experience, experiences, type, expId) {
     const newFormdata = {
       ...this.state.formdata
     };
@@ -157,10 +138,6 @@ class addEditExperience extends Component {
       if (experience) {
         newFormdata[key].value = experience[key];
         newFormdata[key].valid = true;
-      }
-
-      if (key === 'current') {
-        newFormdata[key].config.options = currentOptions;
       }
     }
     this.setState({
@@ -176,21 +153,15 @@ class addEditExperience extends Component {
     const getExperiences = (experience, type) => {
       firebaseExp.once('value').then(snapshot => {
         const experiences = firebaseLooper(snapshot);
-        const currentOptions = [];
-        snapshot.forEach(childSnapshot => {
-          currentOptions.push({
-            key: childSnapshot.val().current,
-            value: childSnapshot.val().current
-          });
-        });
-        this.updateFields(experience, currentOptions, experiences, type, expId);
         //console.log(experiences);
-        //console.log(currentOptions);
+
+        this.updateFields(experience, experiences, type, expId);
       });
     };
 
     if (!expId) {
       // Add experience
+      getExperiences(false, 'Add Experience');
     } else {
       // Edit experience
       firebaseDB
@@ -198,9 +169,68 @@ class addEditExperience extends Component {
         .once('value')
         .then(snapshot => {
           const experience = snapshot.val();
-          getExperiences(experience, 'Edit experience');
+          getExperiences(experience, 'Edit Experience');
           //console.log(experience);
         });
+    }
+  }
+
+  successForm(message) {
+    this.setState({
+      formSuccess: message
+    });
+
+    setTimeout(() => {
+      this.setState({
+        formSuccess: ''
+      });
+    }, 2000);
+  }
+
+  submitForm(event) {
+    event.preventDefault();
+    let dataToSubmit = {};
+    let formIsValid = true;
+
+    for (let key in this.state.formdata) {
+      dataToSubmit[key] = this.state.formdata[key].value;
+      formIsValid =
+        this.state.formdata[key].valid &&
+        formIsValid &&
+        this.state.formdata[key].value !== '';
+    }
+
+    if (formIsValid) {
+      if (this.state.formType === 'Edit Experience') {
+        firebaseDB
+          .ref(`experience/${this.state.expId}`)
+          .update(dataToSubmit)
+          .then(() => {
+            this.successForm('Updated correctly');
+            this.props.history.push('/admin_experience');
+          })
+          .catch(e => {
+            this.setState({
+              formError: true
+            });
+          });
+      } else {
+        // add an experience
+        firebaseExp
+          .push(dataToSubmit)
+          .then(() => {
+            this.props.history.push('/admin_experience');
+          })
+          .catch(e => {
+            this.setState({
+              formError: true
+            });
+          });
+      }
+    } else {
+      this.setState({
+        formError: true
+      });
     }
   }
 
@@ -227,11 +257,7 @@ class addEditExperience extends Component {
                   formdata={this.state.formdata.date_finish}
                   change={element => this.updateForm(element)}
                 />
-                <FormField
-                  id={'select_current'}
-                  formdata={this.state.formdata.current}
-                  change={element => this.updateForm(element)}
-                />
+
                 <FormField
                   id={'city'}
                   formdata={this.state.formdata.city}

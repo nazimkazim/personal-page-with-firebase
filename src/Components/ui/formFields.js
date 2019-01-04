@@ -46,35 +46,6 @@ const FormField = ({ id, formdata, change }) => {
           </React.Fragment>
         );
         break;
-      case 'select':
-        formTemplate = (
-          <React.Fragment>
-            {formdata.showLabel ? (
-              <span className="tag is-info" style={tagMargin}>
-                {formdata.config.label}
-              </span>
-            ) : null}
-            <div className="field">
-              <div className="control">
-                <div className="select is-primary">
-                  <select
-                    value={formdata.value}
-                    onChange={event => change({ event, id })}
-                  >
-                    <option value="">Select one</option>
-                    {formdata.config.options.map(item => (
-                      <option key={item.key} value={item.key}>
-                        {item.value}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-            </div>
-            {showError()}
-          </React.Fragment>
-        );
-        break;
       case 'textarea':
         formTemplate = (
           <React.Fragment>
