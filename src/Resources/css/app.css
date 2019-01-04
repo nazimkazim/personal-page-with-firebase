@@ -149,3 +149,17 @@ img-review {
 /*****
 Anything slider end
 *****/
+
+.delete-icon {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  cursor: pointer;
+  visibility: hidden;
+  display: inline-block;
+}
+
+#exp-cell-company:hover .delete-icon {
+  position: relative;
+  visibility: visible;
+}

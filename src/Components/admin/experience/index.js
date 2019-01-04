@@ -10,7 +10,8 @@ class AdminExperience extends Component {
   state = {
     isLoading: true,
     matches: [],
-    marginTop: '40px'
+    marginTop: '40px',
+    successForm: ''
   };
 
   componentDidMount() {
@@ -23,6 +24,29 @@ class AdminExperience extends Component {
         experiences: reverseArray(experiences.slice(0, experiences.length - 1))
       });
     });
+  }
+
+  successForm(message) {
+    this.setState({
+      successForm: message
+    });
+
+    setTimeout(() => {
+      this.setState({
+        formSuccess: ''
+      });
+    }, 2000);
+  }
+
+  deleteItem(event, experience) {
+    event.preventDefault();
+    firebaseExp
+      .child(experience.id)
+      .remove()
+      .then(() => {
+        this.successForm('Removed successfully');
+        this.props.history.push('/admin_experience');
+      });
   }
 
   render() {
@@ -82,7 +106,7 @@ class AdminExperience extends Component {
                     <tr key={i}>
                       <td>{experience.date_start}</td>
                       <td>{experience.date_finish}</td>
-                      <td>
+                      <td id="exp-cell-company">
                         <Link
                           to={`/admin_experience/edit_experience/${
                             experience.id
@@ -90,6 +114,14 @@ class AdminExperience extends Component {
                         >
                           {experience.company}
                         </Link>
+                        <span
+                          className="delete-icon"
+                          onClick={event => {
+                            this.deleteItem(event, experience);
+                          }}
+                        >
+                          <i class="fa fa-trash" aria-hidden="true" />
+                        </span>
                       </td>
                       <td>{experience.city}</td>
                       <td>{experience.title}</td>

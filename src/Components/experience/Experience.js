@@ -31,10 +31,10 @@ class Experience extends Component {
 
   render() {
     return (
-      <div class="container">
-        <div class="timeline" style={{ padding: '30px' }}>
-          <header class="timeline-header">
-            <span class="tag is-medium is-primary is-size-5">Career</span>
+      <div className="container">
+        <div className="timeline" style={{ padding: '30px' }}>
+          <header className="timeline-header">
+            <span className="tag is-medium is-primary is-size-5">Career</span>
           </header>
           {this.showExperiences(this.state.experiences)}
         </div>
