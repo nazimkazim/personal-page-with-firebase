@@ -10,9 +10,10 @@ import SignIn from './Components/signin/index';
 import Dashboard from './Components/admin/Dashboard';
 import AdminExperience from './Components/admin/experience/index';
 import AddEditExperience from './Components/admin/experience/addEditExperience';
+import AdminEducation from './Components/admin/education/index';
 
 const Routes = props => {
-  console.log(props);
+  //console.log(props);
   return (
     <Layout>
       <Switch>
@@ -33,6 +34,12 @@ const Routes = props => {
           path="/admin_experience/edit_experience/:id"
           exact
           component={AddEditExperience}
+        />
+        <PrivateRoutes
+          {...props}
+          path="/admin_education"
+          exact
+          component={AdminEducation}
         />
         <PrivateRoutes
           {...props}

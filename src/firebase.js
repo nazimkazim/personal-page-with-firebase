@@ -18,5 +18,15 @@ const firebaseDB = firebase.database();
 const firebaseExp = firebaseDB.ref('experience');
 const firebaseRevs = firebaseDB.ref('reviews');
 const firebasePromotions = firebaseDB.ref('promotions');
+const firebaseEduMain = firebaseDB.ref('education_main');
+const firebaseEduAdd = firebaseDB.ref('education_additional');
 
-export { firebase, firebaseExp, firebaseRevs, firebasePromotions, firebaseDB };
+export {
+  firebase,
+  firebaseExp,
+  firebaseRevs,
+  firebasePromotions,
+  firebaseDB,
+  firebaseEduMain,
+  firebaseEduAdd
+};

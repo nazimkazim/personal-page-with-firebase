@@ -11,7 +11,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 class AdminExperience extends Component {
   state = {
     isLoading: true,
-    matches: [],
+    experiences: [],
     marginTop: '40px',
     successForm: ''
   };
@@ -69,7 +69,7 @@ class AdminExperience extends Component {
   }
 
   render() {
-    console.log(this.state);
+    //console.log(this.state.experiences);
     const override = css`
       display: block;
       margin: 0 auto;
@@ -77,7 +77,7 @@ class AdminExperience extends Component {
     `;
     return (
       <AdminLayout>
-        <div>
+        <React.Fragment>
           <div
             className="has-text-centered"
             style={{ marginTop: this.state.marginTop }}
@@ -151,7 +151,7 @@ class AdminExperience extends Component {
                 : null}
             </tbody>
           </table>
-        </div>
+        </React.Fragment>
       </AdminLayout>
     );
   }
