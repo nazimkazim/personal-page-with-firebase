@@ -12,6 +12,7 @@ import AdminExperience from './Components/admin/experience/index';
 import AddEditExperience from './Components/admin/experience/addEditExperience';
 import AdminEducation from './Components/admin/education/index';
 import addEditMainEducation from './Components/admin/education/addEditMainEducation';
+import addEditAdditionalEducation from './Components/admin/education/addEditAdditionalEducation';
 
 const Routes = props => {
   //console.log(props);
@@ -47,6 +48,12 @@ const Routes = props => {
           path="/admin_education/edit_main_education/:id"
           exact
           component={addEditMainEducation}
+        />
+        <PrivateRoutes
+          {...props}
+          path="/admin_education/edit_additional_education/:id"
+          exact
+          component={addEditAdditionalEducation}
         />
         <PrivateRoutes
           {...props}

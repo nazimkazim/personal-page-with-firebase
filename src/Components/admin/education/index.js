@@ -203,7 +203,7 @@ class AdminEducation extends Component {
                       <td>{educationAdd.year_finish}</td>
                       <td id="exp-cell-company">
                         <Link
-                          to={`/admin_education/edit_education/${
+                          to={`/admin_education/edit_additional_education/${
                             educationAdd.id
                           }`}
                         >
@@ -220,7 +220,7 @@ class AdminEducation extends Component {
                       </td>
                       <td>{educationAdd.field}</td>
                       <td>{educationAdd.course_name}</td>
-                      <td>{educationAdd.link.slice(1, 30)}</td>
+                      <td>{educationAdd.link.slice(0, 30)}</td>
                     </tr>
                   ))
                 : null}
