@@ -4,6 +4,7 @@ import { firebaseLooper } from '../ui/misc';
 import 'bulma/css/bulma.css';
 import TimelineTemplate from '../ui/timelineTemplate';
 import { reverseArray } from '../ui/misc';
+import Fade from 'react-reveal/Fade';
 
 class Experience extends Component {
   state = {
@@ -23,9 +24,9 @@ class Experience extends Component {
   showExperiences = experiences =>
     experiences
       ? experiences.map(experience => (
-          <div>
+          <Fade left>
             <TimelineTemplate experience={experience} />
-          </div>
+          </Fade>
         ))
       : null;
 

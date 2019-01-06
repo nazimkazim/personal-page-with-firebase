@@ -146,7 +146,7 @@ class addEditMainEducation extends Component {
 
     if (!edu_main_Id) {
       // Add experience
-      getEducationsMain(false, 'Add Education');
+      getEducationsMain(false, 'Add Main Education');
     } else {
       // Edit experience
       firebaseDB
@@ -255,9 +255,12 @@ class addEditMainEducation extends Component {
                   change={element => this.updateForm(element)}
                 />
                 <FormField
-                  id={'title'}
+                  id={'university'}
                   formdata={this.state.formdata.university}
                   change={element => this.updateForm(element)}
+                  placeholder={
+                    this.state.formdata.university.config.placeholder
+                  }
                 />
                 <div className="help is-success">{this.state.formSuccess}</div>
                 {this.state.formError ? <div>Something is wrong</div> : ''}

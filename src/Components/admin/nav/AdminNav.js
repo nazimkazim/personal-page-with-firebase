@@ -17,8 +17,12 @@ const AdminNav = () => {
       linkTo: '/admin_education'
     },
     {
-      title: 'Add Education',
-      linkTo: '/admin_education/add_education'
+      title: 'Add Main Education',
+      linkTo: '/admin_education/edit_main_education'
+    },
+    {
+      title: 'Add Additional Education',
+      linkTo: '/admin_education/edit_additional_education'
     },
     {
       title: 'Reviews',

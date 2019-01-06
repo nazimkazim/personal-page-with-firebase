@@ -6,6 +6,7 @@ import PublicRoutes from './Components/authRoutes/publicRoutes';
 
 import Home from './Components/home';
 import Experience from './Components/experience/Experience';
+import Education from './Components/education/Education';
 import SignIn from './Components/signin/index';
 import Dashboard from './Components/admin/Dashboard';
 import AdminExperience from './Components/admin/experience/index';
@@ -45,6 +46,18 @@ const Routes = props => {
         />
         <PrivateRoutes
           {...props}
+          path="/admin_education/edit_main_education"
+          exact
+          component={addEditMainEducation}
+        />
+        <PrivateRoutes
+          {...props}
+          path="/admin_education/edit_additional_education"
+          exact
+          component={addEditAdditionalEducation}
+        />
+        <PrivateRoutes
+          {...props}
           path="/admin_education/edit_main_education/:id"
           exact
           component={addEditMainEducation}
@@ -77,6 +90,7 @@ const Routes = props => {
           component={SignIn}
         />
         <Route exact component={Experience} path="/my_experience" />
+        <Route exact component={Education} path="/my_education" />
       </Switch>
     </Layout>
   );
