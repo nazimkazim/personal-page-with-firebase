@@ -141,7 +141,7 @@ class AdminEducation extends Component {
                       <td>{educationMain.year_finish}</td>
                       <td id="exp-cell-company">
                         <Link
-                          to={`/admin_education/edit_education/${
+                          to={`/admin_education/edit_main_education/${
                             educationMain.id
                           }`}
                         >

@@ -2,23 +2,23 @@ import React, { Component } from 'react';
 import AdminLayout from '../../../Hoc/AdminLayout';
 import FormField from '../../ui/formFields';
 import { validate } from '../../ui/misc';
-import { firebaseExp, firebaseDB } from '../../../firebase';
+import { firebaseEduMain, firebaseDB } from '../../../firebase';
 import { firebaseLooper } from '../../ui/misc';
 
-class addEditExperience extends Component {
+class addEditMainEducation extends Component {
   state = {
-    expId: '',
+    edu_main_Id: '',
     formType: '',
     formError: false,
     formSuccess: '',
-    experiences: [],
+    educations_main: [],
     formdata: {
-      date_start: {
+      year_start: {
         element: 'input',
         value: '',
         config: {
           label: 'Start date',
-          name: 'date_start',
+          name: 'year_start',
           type: 'date'
         },
         validation: {
@@ -28,12 +28,12 @@ class addEditExperience extends Component {
         validationMessage: '',
         showLabel: true
       },
-      date_finish: {
+      year_finish: {
         element: 'input',
         value: '',
         config: {
           label: 'Finish date',
-          name: 'date_finish',
+          name: 'year_finish',
           type: 'date'
         },
         validation: {
@@ -43,14 +43,14 @@ class addEditExperience extends Component {
         validationMessage: '',
         showLabel: true
       },
-      city: {
+      degree: {
         element: 'input',
         value: '',
         config: {
-          label: 'Type a city',
-          name: 'city',
+          label: 'Type a degree',
+          name: 'degree',
           type: 'text',
-          placeholder: 'Moscow, Almaty'
+          placeholder: 'Bachelor, Masters'
         },
         validation: {
           required: true
@@ -59,14 +59,14 @@ class addEditExperience extends Component {
         validationMessage: '',
         showLabel: true
       },
-      company: {
+      speciality: {
         element: 'input',
         value: '',
         config: {
-          label: 'Type a company',
-          name: 'company',
+          label: 'Type a speciality',
+          name: 'speciality',
           type: 'text',
-          placeholder: 'Google, Facebook'
+          placeholder: 'Educational Technology'
         },
         validation: {
           required: true
@@ -75,30 +75,14 @@ class addEditExperience extends Component {
         validationMessage: '',
         showLabel: true
       },
-      title: {
+      university: {
         element: 'input',
         value: '',
         config: {
-          label: 'Type your position',
-          name: 'title',
+          label: 'Type a university',
+          name: 'university',
           type: 'text',
-          placeholder: 'Manager, Engineer, Teacher'
-        },
-        validation: {
-          required: true
-        },
-        valid: false,
-        validationMessage: '',
-        showLabel: true
-      },
-      description: {
-        element: 'textarea',
-        value: '',
-        config: {
-          label: 'Describe your duties at work',
-          name: 'description',
-          type: 'text',
-          placeholder: 'I was responsible for managing large projects'
+          placeholder: 'Stanford, Oxford'
         },
         validation: {
           required: true
@@ -130,47 +114,47 @@ class addEditExperience extends Component {
     });
   }
 
-  updateFields(experience, experiences, type, expId) {
+  updateFields(education_main, educations_main, type, edu_main_Id) {
     const newFormdata = {
       ...this.state.formdata
     };
 
     for (let key in newFormdata) {
-      if (experience) {
-        newFormdata[key].value = experience[key];
+      if (education_main) {
+        newFormdata[key].value = education_main[key];
         newFormdata[key].valid = true;
       }
     }
     this.setState({
-      expId,
+      edu_main_Id,
       formType: type,
       formdata: newFormdata,
-      experiences
+      educations_main
     });
   }
 
   componentDidMount() {
-    const expId = this.props.match.params.id;
-    const getExperiences = (experience, type) => {
-      firebaseExp.once('value').then(snapshot => {
-        const experiences = firebaseLooper(snapshot);
+    const edu_main_Id = this.props.match.params.id;
+    const getEducationsMain = (education_main, type) => {
+      firebaseEduMain.once('value').then(snapshot => {
+        const educations_main = firebaseLooper(snapshot);
         //console.log(experiences);
 
-        this.updateFields(experience, experiences, type, expId);
+        this.updateFields(education_main, educations_main, type, edu_main_Id);
       });
     };
 
-    if (!expId) {
+    if (!edu_main_Id) {
       // Add experience
-      getExperiences(false, 'Add Experience');
+      getEducationsMain(false, 'Add Education');
     } else {
       // Edit experience
       firebaseDB
-        .ref(`experience/${expId}`)
+        .ref(`education_main/${edu_main_Id}`)
         .once('value')
         .then(snapshot => {
-          const experience = snapshot.val();
-          getExperiences(experience, 'Edit Experience');
+          const education_main = snapshot.val();
+          getEducationsMain(education_main, 'Edit Main Education');
           //console.log(experience);
         });
     }
@@ -202,13 +186,13 @@ class addEditExperience extends Component {
     }
 
     if (formIsValid) {
-      if (this.state.formType === 'Edit Experience') {
+      if (this.state.formType === 'Edit Main Education') {
         firebaseDB
-          .ref(`experience/${this.state.expId}`)
+          .ref(`education_main/${this.state.edu_main_Id}`)
           .update(dataToSubmit)
           .then(() => {
             this.successForm('Updated correctly');
-            this.props.history.push('/admin_experience');
+            this.props.history.push('/admin_education');
           })
           .catch(e => {
             this.setState({
@@ -217,10 +201,10 @@ class addEditExperience extends Component {
           });
       } else {
         // add an experience
-        firebaseExp
+        firebaseEduMain
           .push(dataToSubmit)
           .then(() => {
-            this.props.history.push('/admin_experience');
+            this.props.history.push('/admin_education');
           })
           .catch(e => {
             this.setState({
@@ -249,35 +233,30 @@ class addEditExperience extends Component {
             <div className="column is-three-fifths is-offset-one-fifth">
               <form onSubmit={event => this.submitForm(event)}>
                 <FormField
-                  id={'date_start'}
-                  formdata={this.state.formdata.date_start}
+                  id={'year_start'}
+                  formdata={this.state.formdata.year_start}
                   change={element => this.updateForm(element)}
                 />
                 <FormField
-                  id={'date_finish'}
-                  formdata={this.state.formdata.date_finish}
+                  id={'year_finish'}
+                  formdata={this.state.formdata.year_finish}
                   change={element => this.updateForm(element)}
                 />
 
                 <FormField
-                  id={'city'}
-                  formdata={this.state.formdata.city}
+                  id={'degree'}
+                  formdata={this.state.formdata.degree}
                   change={element => this.updateForm(element)}
-                  placeholder={this.state.formdata.city.config.placeholder}
+                  placeholder={this.state.formdata.degree.config.placeholder}
                 />
                 <FormField
-                  id={'company'}
-                  formdata={this.state.formdata.company}
+                  id={'speciality'}
+                  formdata={this.state.formdata.speciality}
                   change={element => this.updateForm(element)}
                 />
                 <FormField
                   id={'title'}
-                  formdata={this.state.formdata.title}
-                  change={element => this.updateForm(element)}
-                />
-                <FormField
-                  id={'description'}
-                  formdata={this.state.formdata.description}
+                  formdata={this.state.formdata.university}
                   change={element => this.updateForm(element)}
                 />
                 <div className="help is-success">{this.state.formSuccess}</div>
@@ -300,4 +279,4 @@ class addEditExperience extends Component {
   }
 }
 
-export default addEditExperience;
+export default addEditMainEducation;
