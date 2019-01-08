@@ -34,7 +34,7 @@ class MainEducation extends Component {
     return (
       <div className="timeline" style={{ padding: '30px' }}>
         <header className="timeline-header">
-          <span className="tag is-medium is-primary is-size-5 is-uppercase">
+          <span className="tag is-medium is-primary is-size-6 is-uppercase">
             Main Education
           </span>
         </header>

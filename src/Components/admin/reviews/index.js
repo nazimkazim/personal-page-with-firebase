@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AdminLayout from '../../../Hoc/AdminLayout';
-import { firebaseExp } from '../../../firebase';
+import { firebaseRevs } from '../../../firebase';
 import { firebaseLooper, reverseArray } from '../../ui/misc';
 import { css } from 'react-emotion';
 import { BarLoader } from 'react-spinners';
@@ -11,19 +11,19 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 class AdminExperience extends Component {
   state = {
     isLoading: true,
-    experiences: [],
+    reviews: [],
     marginTop: '40px',
     successForm: ''
   };
 
   componentDidMount() {
-    firebaseExp.once('value').then(snapshot => {
-      const experiences = firebaseLooper(snapshot);
+    firebaseRevs.once('value').then(snapshot => {
+      const reviews = firebaseLooper(snapshot);
 
       this.setState({
         isLoading: false,
         marginTop: '0px',
-        experiences: reverseArray(experiences.slice(0, experiences.length - 1))
+        reviews
       });
     });
   }
@@ -40,7 +40,7 @@ class AdminExperience extends Component {
     }, 2000);
   }
 
-  deleteItem(event, experience) {
+  deleteItem(event, review) {
     event.preventDefault();
     confirmAlert({
       title: 'Confirm to submit',
@@ -49,12 +49,12 @@ class AdminExperience extends Component {
         {
           label: 'Yes',
           onClick: () => {
-            firebaseExp
-              .child(experience.id)
+            firebaseRevs
+              .child(review.id)
               .remove()
               .then(() => {
                 this.successForm('Removed successfully');
-                this.props.history.push('/admin_experience');
+                this.props.history.push('/admin_reviews');
               });
           }
         },
@@ -69,7 +69,6 @@ class AdminExperience extends Component {
   }
 
   render() {
-    //console.log(this.state.experiences);
     const override = css`
       display: block;
       margin: 0 auto;
@@ -103,49 +102,28 @@ class AdminExperience extends Component {
                 <th>Finish Date</th>
                 <th>Company</th>
                 <th>City</th>
-                <th>Position</th>
-                <th>Description</th>
-                <th>Current</th>
               </tr>
             </thead>
-            <tfoot>
-              <tr>
-                <th>Start Date</th>
-                <th>Finish Date</th>
-                <th>Company</th>
-                <th>City</th>
-                <th>Position</th>
-                <th>Description</th>
-                <th>Current</th>
-              </tr>
-            </tfoot>
             <tbody>
-              {this.state.experiences
-                ? this.state.experiences.map((experience, i) => (
+              {this.state.reviews
+                ? this.state.reviews.map((review, i) => (
                     <tr key={i}>
-                      <td>{experience.date_start}</td>
-                      <td>{experience.date_finish}</td>
+                      <td>{review.name}</td>
+                      <td>{review.title}</td>
                       <td id="exp-cell-company">
-                        <Link
-                          to={`/admin_experience/edit_experience/${
-                            experience.id
-                          }`}
-                        >
-                          {experience.company}
+                        <Link to={`/admin_reviews/edit_review/${review.id}`}>
+                          {review.company}
                         </Link>
                         <span
                           className="delete-icon"
                           onClick={event => {
-                            this.deleteItem(event, experience);
+                            this.deleteItem(event, review);
                           }}
                         >
                           <i class="fa fa-trash" aria-hidden="true" />
                         </span>
                       </td>
-                      <td>{experience.city}</td>
-                      <td>{experience.title}</td>
-                      <td>{experience.description.slice(0, 30) + '...'}</td>
-                      <td>{experience.current}</td>
+                      <td>{review.description.slice(0, 30) + '...'}</td>
                     </tr>
                   ))
                 : null}

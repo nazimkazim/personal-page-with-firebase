@@ -117,6 +117,14 @@ img-review {
   left: 7rem;
 }
 
+.slide-label-rev:nth-of-type(6) {
+  left: 8.5rem;
+}
+
+.slide-label-rev:nth-of-type(7) {
+  left: 10rem;
+}
+
 .padded {
   padding: 1rem 2rem;
 }

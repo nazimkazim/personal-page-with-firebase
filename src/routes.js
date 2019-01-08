@@ -3,7 +3,6 @@ import Layout from './Hoc/Layout';
 import { Switch, Route } from 'react-router-dom';
 import PrivateRoutes from './Components/authRoutes/privateRoutes';
 import PublicRoutes from './Components/authRoutes/publicRoutes';
-
 import Home from './Components/home';
 import Experience from './Components/experience/Experience';
 import Education from './Components/education/Education';
@@ -14,6 +13,8 @@ import AddEditExperience from './Components/admin/experience/addEditExperience';
 import AdminEducation from './Components/admin/education/index';
 import addEditMainEducation from './Components/admin/education/addEditMainEducation';
 import addEditAdditionalEducation from './Components/admin/education/addEditAdditionalEducation';
+import AdminReviews from './Components/admin/reviews';
+import AddEditReviews from './Components/admin/reviews/addEditReviews';
 
 const Routes = props => {
   //console.log(props);
@@ -67,6 +68,24 @@ const Routes = props => {
           path="/admin_education/edit_additional_education/:id"
           exact
           component={addEditAdditionalEducation}
+        />
+        <PrivateRoutes
+          {...props}
+          path="/admin_reviews"
+          exact
+          component={AdminReviews}
+        />
+        <PrivateRoutes
+          {...props}
+          path="/admin_reviews/edit_review/:id"
+          exact
+          component={AddEditReviews}
+        />
+        <PrivateRoutes
+          {...props}
+          path="/admin_reviews/edit_review"
+          exact
+          component={AddEditReviews}
         />
         <PrivateRoutes
           {...props}

@@ -3,6 +3,7 @@ import Moment from 'react-moment';
 import 'bulma/css/bulma.css';
 
 const TimelineTemplate = ({ experience }) => {
+  console.log(experience);
   return (
     <div class="timeline-item">
       <div class="timeline-marker is-icon">

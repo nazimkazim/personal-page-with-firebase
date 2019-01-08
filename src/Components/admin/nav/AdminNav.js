@@ -30,7 +30,7 @@ const AdminNav = () => {
     },
     {
       title: 'Add Reviews',
-      linkTo: '/admin_reviews/add_reviews'
+      linkTo: '/admin_reviews/edit_review'
     },
     {
       title: 'Projects',
