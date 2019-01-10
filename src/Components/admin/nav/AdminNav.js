@@ -38,7 +38,7 @@ const AdminNav = () => {
     },
     {
       title: 'Add Projects',
-      linkTo: '/admin_projects/add_projects'
+      linkTo: '/admin_projects/edit_project'
     }
   ];
 

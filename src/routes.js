@@ -5,6 +5,7 @@ import PrivateRoutes from './Components/authRoutes/privateRoutes';
 import PublicRoutes from './Components/authRoutes/publicRoutes';
 import Home from './Components/home';
 import Experience from './Components/experience/Experience';
+import Projects from './Components/projects/index';
 import Education from './Components/education/Education';
 import SignIn from './Components/signin/index';
 import Dashboard from './Components/admin/Dashboard';
@@ -15,6 +16,8 @@ import addEditMainEducation from './Components/admin/education/addEditMainEducat
 import addEditAdditionalEducation from './Components/admin/education/addEditAdditionalEducation';
 import AdminReviews from './Components/admin/reviews';
 import AddEditReviews from './Components/admin/reviews/addEditReviews';
+import AdminProjects from './Components/admin/projects/index';
+import AddEditProjects from './Components/admin/projects/AddEditProjects';
 
 const Routes = props => {
   //console.log(props);
@@ -89,6 +92,24 @@ const Routes = props => {
         />
         <PrivateRoutes
           {...props}
+          path="/admin_projects"
+          exact
+          component={AdminProjects}
+        />
+        <PrivateRoutes
+          {...props}
+          path="/admin_projects/edit_project"
+          exact
+          component={AddEditProjects}
+        />
+        <PrivateRoutes
+          {...props}
+          path="/admin_projects/edit_project/:id"
+          exact
+          component={AddEditProjects}
+        />
+        <PrivateRoutes
+          {...props}
           restricted={true}
           path="/dashboard"
           exact
@@ -109,6 +130,7 @@ const Routes = props => {
           component={SignIn}
         />
         <Route exact component={Experience} path="/my_experience" />
+        <Route exact component={Projects} path="/projects" />
         <Route exact component={Education} path="/my_education" />
       </Switch>
     </Layout>
