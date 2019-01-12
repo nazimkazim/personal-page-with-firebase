@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
+import 'firebase/storage';
 
 var config = {
   apiKey: 'AIzaSyBM3nDz4nQhU1RrUXGPzJO6QBoNvklr61k',
@@ -21,6 +22,7 @@ const firebasePromotions = firebaseDB.ref('promotions');
 const firebaseEduMain = firebaseDB.ref('education_main');
 const firebaseEduAdd = firebaseDB.ref('education_additional');
 const firebaseProjects = firebaseDB.ref('projects');
+const firebasePhotos = firebaseDB.ref('photos');
 
 export {
   firebase,
@@ -30,5 +32,6 @@ export {
   firebaseDB,
   firebaseEduMain,
   firebaseEduAdd,
-  firebaseProjects
+  firebaseProjects,
+  firebasePhotos
 };

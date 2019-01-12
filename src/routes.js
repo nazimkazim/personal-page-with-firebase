@@ -18,6 +18,8 @@ import AdminReviews from './Components/admin/reviews';
 import AddEditReviews from './Components/admin/reviews/addEditReviews';
 import AdminProjects from './Components/admin/projects/index';
 import AddEditProjects from './Components/admin/projects/AddEditProjects';
+import Uploadphotos from './Components/admin/photos/uploadphotos';
+import DisplayPhotos from './Components/admin/photos/displayPhotos';
 
 const Routes = props => {
   //console.log(props);
@@ -107,6 +109,18 @@ const Routes = props => {
           path="/admin_projects/edit_project/:id"
           exact
           component={AddEditProjects}
+        />
+        <PrivateRoutes
+          {...props}
+          path="/admin_photos/edit_photos"
+          exact
+          component={Uploadphotos}
+        />
+        <PrivateRoutes
+          {...props}
+          path="/admin_photos"
+          exact
+          component={DisplayPhotos}
         />
         <PrivateRoutes
           {...props}

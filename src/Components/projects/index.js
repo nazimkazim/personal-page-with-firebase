@@ -33,7 +33,7 @@ export default class Projects extends Component {
             <div class="card-content">
               <div class="media">
                 <div class="media-content">
-                  <p class="title is-4 has-text-centered">
+                  <p class="title is-4 has-text-centered is-size-6-mobile">
                     {project.project_name}
                   </p>
                 </div>
@@ -68,7 +68,7 @@ export default class Projects extends Component {
     };
     return (
       <div className="container">
-        <div className="columns is-mobile" style={padding}>
+        <div className="columns" style={padding}>
           <div className="column is-6 is-offset-3">
             {this.showProjects(this.state.projects)}
           </div>

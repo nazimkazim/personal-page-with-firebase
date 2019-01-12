@@ -39,6 +39,10 @@ const AdminNav = () => {
     {
       title: 'Add Projects',
       linkTo: '/admin_projects/edit_project'
+    },
+    {
+      title: 'Add Photos',
+      linkTo: '/admin_photos/edit_photos'
     }
   ];
 
