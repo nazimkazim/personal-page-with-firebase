@@ -32,7 +32,7 @@ class Fileuploader extends Component {
   };
 
   handleUploadSuccess = filename => {
-    console.log(filename);
+    //console.log(filename);
     this.setState({
       name: filename,
       isUploading: false
@@ -61,18 +61,22 @@ class Fileuploader extends Component {
 
     return (
       <div>
-        <div>
-          <div>{this.props.tag}</div>
-          <FileUploader
-            accept="image/*"
-            name="image"
-            randomizeFilename
-            storageRef={firebase.storage().ref(this.props.dir)}
-            onUploadStart={this.handleUploadStart}
-            onUploadError={this.handleUploadError}
-            onUploadSuccess={this.handleUploadSuccess}
-          />
-        </div>
+        <span
+          style={{ display: 'block', width: '120px', marginBottom: '10px' }}
+          className="tag is-primary"
+        >
+          {this.props.tag}
+        </span>
+        <FileUploader
+          accept="image/*"
+          name="image"
+          randomizeFilename
+          storageRef={firebase.storage().ref(this.props.dir)}
+          onUploadStart={this.handleUploadStart}
+          onUploadError={this.handleUploadError}
+          onUploadSuccess={this.handleUploadSuccess}
+        />
+
         {this.state.isUploading ? (
           <div>
             <BarLoader
@@ -87,21 +91,17 @@ class Fileuploader extends Component {
           </div>
         ) : null}
 
-        <div className="container">
-          <div className="columns">
-            {this.state.fileURL ? (
-              <div>
-                <div className="column is-3">
-                  <img
-                    style={{ width: '100%' }}
-                    src={this.state.fileURL}
-                    alt={this.state.name}
-                  />
-                </div>
-              </div>
-            ) : null}
+        {this.state.fileURL ? (
+          <div>
+            <div className="column is-3">
+              <img
+                style={{ width: '100%' }}
+                src={this.state.fileURL}
+                alt={this.state.name}
+              />
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
     );
   }

@@ -43,6 +43,10 @@ const AdminNav = () => {
     {
       title: 'Add Photos',
       linkTo: '/admin_photos/edit_photos'
+    },
+    {
+      title: 'See Photos',
+      linkTo: '/admin_photos'
     }
   ];
 

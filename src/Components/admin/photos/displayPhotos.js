@@ -12,6 +12,7 @@ class Adminphoto extends Component {
   state = {
     isLoading: true,
     photos: [],
+    photosMain: [],
     marginTop: '40px',
     successForm: ''
   };
@@ -25,7 +26,8 @@ class Adminphoto extends Component {
 
       this.setState({
         isLoading: false,
-        marginTop: '0px'
+        marginTop: '0px',
+        photosMain: photos
       });
     });
   }
@@ -63,12 +65,13 @@ class Adminphoto extends Component {
         {
           label: 'Yes',
           onClick: () => {
-            firebasePhotos
-              .child(photo.id)
-              .remove()
+            firebase
+              .storage()
+              .refFromURL(photo)
+              .delete()
               .then(() => {
                 this.successForm('Removed successfully');
-                this.props.history.push('/admin_photo');
+                this.props.history.push('/admin_photos');
               });
           }
         },
@@ -83,7 +86,7 @@ class Adminphoto extends Component {
   }
 
   render() {
-    console.log(this.state.photos);
+    //console.log(this.state.photosMain);
     const override = css`
       display: block;
       margin: 0 auto;
@@ -92,32 +95,44 @@ class Adminphoto extends Component {
     return (
       <AdminLayout>
         <React.Fragment>
-          <div
-            className="has-text-centered"
-            style={{ marginTop: this.state.marginTop }}
-          >
-            {this.state.isLoading ? (
-              <BarLoader
-                className={override}
-                sizeUnit={'px'}
-                size={50}
-                width={100}
-                height={4}
-                color={'#2D7969'}
-                loading={this.state.loading}
-              />
-            ) : (
-              ''
-            )}
-          </div>
-          <div className="columns">
-            {this.state.photos
-              ? this.state.photos.map((photo, i) => (
-                  <div key={i} className="column is-4">
-                    <img src={photo} />
-                  </div>
-                ))
-              : null}
+          <div className="container is-fluid">
+            <div
+              className="has-text-centered"
+              style={{ marginTop: this.state.marginTop }}
+            >
+              {this.state.isLoading ? (
+                <BarLoader
+                  className={override}
+                  sizeUnit={'px'}
+                  size={50}
+                  width={100}
+                  height={4}
+                  color={'#2D7969'}
+                  loading={this.state.loading}
+                />
+              ) : (
+                ''
+              )}
+            </div>
+            <div className="columns is-multiline" style={{ marginTop: '30px' }}>
+              {this.state.photos
+                ? this.state.photos.map((photo, i) => (
+                    <div key={i} className="column is-4" id="exp-cell-company">
+                      <figure className="image card">
+                        <img src={photo} />
+                      </figure>
+                      <span
+                        className="delete-icon"
+                        onClick={event => {
+                          this.deleteItem(event, photo);
+                        }}
+                      >
+                        <i class="fa fa-trash" aria-hidden="true" />
+                      </span>
+                    </div>
+                  ))
+                : null}
+            </div>
           </div>
         </React.Fragment>
       </AdminLayout>

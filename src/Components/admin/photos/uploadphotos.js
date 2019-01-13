@@ -2,7 +2,7 @@ import Fileuploader from '../../ui/fileuploader';
 import React, { Component } from 'react';
 import AdminLayout from '../../../Hoc/AdminLayout';
 import { validate } from '../../ui/misc';
-
+import FormField from '../../ui/formFields';
 import { firebasePhotos, firebaseDB } from '../../../firebase';
 import { firebaseLooper } from '../../ui/misc';
 
@@ -22,6 +22,22 @@ export default class UploadPhotos extends Component {
           required: true
         },
         valid: false
+      },
+      caption: {
+        element: 'input',
+        value: '',
+        config: {
+          label: 'Write a caption',
+          name: 'caption',
+          type: 'text',
+          placeholder: 'Describe a picture'
+        },
+        validation: {
+          required: true
+        },
+        valid: false,
+        validationMessage: '',
+        showLabel: true
       }
     }
   };
@@ -31,7 +47,7 @@ export default class UploadPhotos extends Component {
     const getPhotos = (photo, type) => {
       firebasePhotos.once('value').then(snapshot => {
         const photos = firebaseLooper(snapshot);
-        console.log(photos);
+        //console.log(photos);
 
         this.updateFields(photo, photos, type, photoId);
       });
@@ -66,7 +82,7 @@ export default class UploadPhotos extends Component {
   }
 
   updateForm(element, content = '') {
-    console.log(this.state.formdata);
+    //console.log(this.state.formdata);
     const newFormdata = {
       ...this.state.formdata
     };
@@ -156,7 +172,6 @@ export default class UploadPhotos extends Component {
     });
   }
 
-  resetImage = () => {};
   storeFilename = filename => {
     this.updateForm({ id: 'image' }, filename);
   };
@@ -167,26 +182,35 @@ export default class UploadPhotos extends Component {
       <div>
         <AdminLayout>
           <h2 className="has-text-centered">Add Photos</h2>
-          <div>
+
+          <div style={{ marginBottom: '10px' }}>
             <Fileuploader
               dir="photos"
               tag={'Upload your image'}
               defaultImg={this.state.defaultImg}
               defaultImgName={this.state.formdata.image.value}
-              resetImage={() => this.resetImage()}
               filename={filename => {
                 this.storeFilename(filename);
               }}
             />
           </div>
-          <a
-            class="button is-info is-hovered"
-            onClick={event => {
-              this.submitForm(event);
-            }}
-          >
-            {this.state.formType}
-          </a>
+          <FormField
+            id={'caption'}
+            formdata={this.state.formdata.caption}
+            change={element => this.updateForm(element)}
+            placeholder={this.state.formdata.caption.config.placeholder}
+          />
+
+          <div>
+            <a
+              class="button is-info is-hovered"
+              onClick={event => {
+                this.submitForm(event);
+              }}
+            >
+              {this.state.formType}
+            </a>
+          </div>
         </AdminLayout>
       </div>
     );
