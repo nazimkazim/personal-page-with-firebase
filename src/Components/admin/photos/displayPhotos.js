@@ -12,7 +12,6 @@ class Adminphoto extends Component {
   state = {
     isLoading: true,
     photos: [],
-    photosMain: [],
     marginTop: '40px',
     successForm: ''
   };
@@ -20,29 +19,14 @@ class Adminphoto extends Component {
   componentDidMount() {
     firebasePhotos.once('value').then(snapshot => {
       const photos = firebaseLooper(snapshot);
-      reverseArray(photos).map(photo => {
-        this.getURL(photo.image);
-      });
 
       this.setState({
         isLoading: false,
         marginTop: '0px',
-        photosMain: photos
+        photos: photos
       });
     });
   }
-
-  getURL = filename => {
-    //console.log(filename);
-    firebase
-      .storage()
-      .ref('photos')
-      .child(filename)
-      .getDownloadURL()
-      .then(url => {
-        this.setState({ photos: [...this.state.photos, url] });
-      });
-  };
 
   successForm(message) {
     this.setState({
@@ -67,8 +51,16 @@ class Adminphoto extends Component {
           onClick: () => {
             firebase
               .storage()
-              .refFromURL(photo)
+              .refFromURL(photo.url)
               .delete()
+              .then(() => {
+                this.successForm('Removed successfully');
+                this.props.history.push('/admin_photos');
+              });
+
+            firebasePhotos
+              .child(photo.id)
+              .remove()
               .then(() => {
                 this.successForm('Removed successfully');
                 this.props.history.push('/admin_photos');
@@ -117,10 +109,16 @@ class Adminphoto extends Component {
             <div className="columns is-multiline" style={{ marginTop: '30px' }}>
               {this.state.photos
                 ? this.state.photos.map((photo, i) => (
-                    <div key={i} className="column is-4" id="exp-cell-company">
-                      <figure className="image card">
-                        <img src={photo} />
+                    <div
+                      key={i}
+                      className="column is-3 card"
+                      id="exp-cell-company"
+                      style={{ margin: '3px' }}
+                    >
+                      <figure className="image">
+                        <img src={photo.url} />
                       </figure>
+                      <span>{photo.caption}</span>
                       <span
                         className="delete-icon"
                         onClick={event => {

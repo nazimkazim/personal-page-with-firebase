@@ -38,6 +38,22 @@ export default class UploadPhotos extends Component {
         valid: false,
         validationMessage: '',
         showLabel: true
+      },
+      url: {
+        element: 'input',
+        value: '',
+        config: {
+          label: 'Write a caption',
+          name: 'url',
+          type: 'text',
+          placeholder: ''
+        },
+        validation: {
+          required: false
+        },
+        valid: true,
+        validationMessage: '',
+        showLabel: false
       }
     }
   };
@@ -176,6 +192,10 @@ export default class UploadPhotos extends Component {
     this.updateForm({ id: 'image' }, filename);
   };
 
+  storeUrl = url => {
+    this.updateForm({ id: 'url' }, url);
+  };
+
   render() {
     console.log(this.state.formdata);
     return (
@@ -191,6 +211,9 @@ export default class UploadPhotos extends Component {
               defaultImgName={this.state.formdata.image.value}
               filename={filename => {
                 this.storeFilename(filename);
+              }}
+              fileurl={url => {
+                this.storeUrl(url);
               }}
             />
           </div>

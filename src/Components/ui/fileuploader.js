@@ -48,7 +48,9 @@ class Fileuploader extends Component {
         this.setState({
           fileURL: url
         });
+        this.props.fileurl(url);
       });
+
     this.props.filename(filename);
   };
 
