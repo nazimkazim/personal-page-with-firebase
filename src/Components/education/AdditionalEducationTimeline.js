@@ -33,10 +33,10 @@ class AdditionalEducation extends Component {
   render() {
     return (
       <div className="timeline" style={{ padding: '30px' }}>
-        <header className="timeline-header">
-          <span className="tag is-medium is-primary is-size-6 is-uppercase">
+        <header>
+          <h2 className="has-text-centered tag is-primary is-size-6">
             Additional Education
-          </span>
+          </h2>
         </header>
         {this.showAdditionalEducation(this.state.educations_additional)}
       </div>

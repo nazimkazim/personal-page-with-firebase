@@ -29,13 +29,15 @@ class Experience extends Component {
           </Fade>
         ))
       : null;
-        
+
   render() {
     return (
       <div className="container">
         <div className="timeline" style={{ padding: '30px' }}>
-          <header className="timeline-header">
-            <span className="tag is-medium is-primary is-size-5">Career</span>
+          <header>
+            <h2 className="has-text-centered tag is-primary  is-size-6">
+              Career
+            </h2>
           </header>
           {this.showExperiences(this.state.experiences)}
         </div>
