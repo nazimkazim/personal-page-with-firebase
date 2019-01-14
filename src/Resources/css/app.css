@@ -1,12 +1,12 @@
 .title-name-custom {
-  font-family: 'Monoton', cursive;
+  font-family: 'Roboto';
+  font-weight: bold;
   letter-spacing: 8px;
   font-size: 30px;
   animation-name: moveInLeft;
   -webkit-animation-name: moveInLeft;
   animation-duration: 2s;
   -webkit-animation-duration: 2s;
-  display: inline-block;
   transition-timing-function: ease-out;
   -webkit-transition-timing-function: ease-out;
 }
@@ -135,7 +135,7 @@ img-review {
   margin-right: -100%;
 }
 .slide-switch-rev:checked + .slide-label-rev {
-  background: #24343f;
+  background: #2869b9;
 }
 .slide-switch-rev:not(:checked) + .slide-label-rev + .slide-content-rev {
   opacity: 0;

@@ -11,7 +11,7 @@ const TimelineTemplate = ({ education }) => {
       <div class="timeline-content">
         <p class="heading">
           <span>
-            <Moment format="YYYY MMMM">{education.date_finish}</Moment>
+            <Moment format="YYYY MMMM">{education.year_finish}</Moment>
           </span>
         </p>
         <p>
