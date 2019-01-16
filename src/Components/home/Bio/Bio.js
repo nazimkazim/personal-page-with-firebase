@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { firebaseExp, firebasePhotos } from './../../../firebase';
+import { firebaseAboutMe, firebasePhotos } from './../../../firebase';
 import { firebaseLooper } from '../../ui/misc';
 import 'bulma/css/bulma.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -8,17 +8,14 @@ import { Carousel } from 'react-responsive-carousel';
 
 class Bio extends Component {
   state = {
-    about_me_title: '',
-    about_me_description: '',
+    about_me: [],
     photos: []
   };
   componentDidMount() {
-    firebaseExp.once('value').then(snapshot => {
-      const about_me_title = snapshot.val().about_me.title;
-      const about_me_description = snapshot.val().about_me.description;
+    firebaseAboutMe.once('value').then(snapshot => {
+      const about_me = firebaseLooper(snapshot);
       this.setState({
-        about_me_title,
-        about_me_description
+        about_me
       });
     });
 
@@ -55,12 +52,18 @@ class Bio extends Component {
                 </div>
 
                 <div className="column is-half">
-                  <h1 className="title has-text-centered is-uppercase">
-                    {this.state.about_me_title}
-                  </h1>
-                  <p className="has-text-grey-dark">
-                    {this.state.about_me_description}
-                  </p>
+                  {this.state.about_me
+                    ? this.state.about_me.map(item => (
+                        <React.Fragment>
+                          <h1 className="title has-text-centered is-uppercase">
+                            {item.title}
+                          </h1>
+                          <p className="has-text-grey-dark">
+                            {item.description}
+                          </p>
+                        </React.Fragment>
+                      ))
+                    : null}
                   <div>
                     <Link
                       className="button is-info is-inverted"

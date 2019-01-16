@@ -40,9 +40,6 @@ export default class Header extends Component {
               <Navbar.Item>
                 <Link to="/projects">Projects</Link>
               </Navbar.Item>
-              <Navbar.Item>
-                <Link to="/services">Services</Link>
-              </Navbar.Item>
             </Navbar.Container>
           </Navbar.Menu>
         </Navbar>

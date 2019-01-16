@@ -132,7 +132,7 @@ class ContactMe extends Component {
             <form onSubmit={event => this.submitForm(event)}>
               <header className="modal-card-head">
                 <p className="modal-card-title has-text-centered">
-                  Please tell something about yourself
+                  Please, leave your e-mail I will contact you ASAP
                 </p>
               </header>
               <section className="modal-card-body">

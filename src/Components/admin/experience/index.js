@@ -23,7 +23,7 @@ class AdminExperience extends Component {
       this.setState({
         isLoading: false,
         marginTop: '0px',
-        experiences: reverseArray(experiences.slice(0, experiences.length - 1))
+        experiences: reverseArray(experiences)
       });
     });
   }

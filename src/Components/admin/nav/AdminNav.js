@@ -4,6 +4,7 @@ import { firebase } from '../../../firebase';
 
 const AdminNav = () => {
   const links = [
+    { title: 'About me', linkTo: '/admin_about_me' },
     {
       title: 'Experience',
       linkTo: '/admin_experience'

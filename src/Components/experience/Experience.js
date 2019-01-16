@@ -16,7 +16,7 @@ class Experience extends Component {
       const experiences = firebaseLooper(snapshot);
 
       this.setState({
-        experiences: reverseArray(experiences.slice(0, experiences.length - 1))
+        experiences: reverseArray(experiences)
       });
     });
   }

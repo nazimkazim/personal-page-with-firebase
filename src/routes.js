@@ -20,12 +20,26 @@ import AdminProjects from './Components/admin/projects/index';
 import AddEditProjects from './Components/admin/projects/AddEditProjects';
 import Uploadphotos from './Components/admin/photos/uploadphotos';
 import DisplayPhotos from './Components/admin/photos/displayPhotos';
+import AboutMeAdmin from './Components/admin/experience/about_me/index';
+import EditAboutMe from './Components/admin/experience/about_me/EditAboutMe';
 
 const Routes = props => {
   //console.log(props);
   return (
     <Layout>
       <Switch>
+        <PrivateRoutes
+          {...props}
+          path="/admin_about_me"
+          exact
+          component={AboutMeAdmin}
+        />
+        <PrivateRoutes
+          {...props}
+          path="/admin_about_me/edit_about_me/:id"
+          exact
+          component={EditAboutMe}
+        />
         <PrivateRoutes
           {...props}
           path="/admin_experience"

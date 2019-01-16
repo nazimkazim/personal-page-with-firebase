@@ -46,14 +46,14 @@ export default class Projects extends Component {
                   href={project.project_link}
                   target="_blank"
                 >
-                  Github
+                  See demo
                 </a>
                 <a
                   className="tag is-success is-medium"
                   href={project.project_source_code}
                   target="_blank"
                 >
-                  Source code
+                  Github
                 </a>
               </div>
             </div>

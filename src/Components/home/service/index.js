@@ -16,7 +16,10 @@ const Service = () => {
 
   return (
     <div>
-      <section class="hero has-background-white-ter is-fullheight">
+      <section
+        class="hero has-background-white-ter is-fullheight"
+        id="service-section"
+      >
         <div class="hero-body">
           <div class="container">
             <h2
@@ -76,21 +79,18 @@ const Service = () => {
                 <div style={serviceCardStyle}>
                   <h3 className="has-text-centered" style={{ padding: '30px' }}>
                     <span className="is-size-3 is-uppercase has-text-weight-bold">
-                      Programming
+                      Programming Skills
                     </span>
                   </h3>
                   <ul>
                     <li className="has-text-centered is-uppercase">
-                      Modern Books
+                      Javascript, React
                     </li>
                     <li className="has-text-centered is-uppercase">
-                      Communicative approach
+                      CSS, HTML
                     </li>
                     <li className="has-text-centered is-uppercase">
-                      Technology-enriched learning process
-                    </li>
-                    <li className="has-text-centered is-uppercase">
-                      Engaging Activities
+                      Nodejs, MongoDB
                     </li>
                   </ul>
                 </div>
