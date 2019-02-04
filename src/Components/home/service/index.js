@@ -1,5 +1,5 @@
 import React from 'react';
-import bckImg from './../../../Resources/images/bckImg.jpg';
+import { Link } from 'react-router-dom';
 
 const Service = () => {
   const serviceCardStyle = {
@@ -50,6 +50,12 @@ const Service = () => {
                       Engaging Activities
                     </li>
                   </ul>
+                  <div
+                    className="has-text-centered"
+                    style={{ marginTop: '15px' }}
+                  >
+                    <a class="button is-info">Learn more</a>
+                  </div>
                 </div>
               </div>
               <div className="column">
@@ -73,6 +79,14 @@ const Service = () => {
                       Engaging Activities
                     </li>
                   </ul>
+                  <div
+                    className="has-text-centered"
+                    style={{ marginTop: '15px' }}
+                  >
+                    <Link to="/detailed/russian" class="button is-info">
+                      Learn more
+                    </Link>
+                  </div>
                 </div>
               </div>
               <div className="column">
@@ -93,6 +107,12 @@ const Service = () => {
                       Nodejs, MongoDB
                     </li>
                   </ul>
+                  <div
+                    className="has-text-centered"
+                    style={{ marginTop: '15px' }}
+                  >
+                    <a class="button is-info">Learn more</a>
+                  </div>
                 </div>
               </div>
             </div>

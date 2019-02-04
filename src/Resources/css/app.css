@@ -171,3 +171,23 @@ Anything slider end
   position: relative;
   visibility: visible;
 }
+
+.is-margin-top-large {
+  margin-top: 80px;
+}
+
+.is-margin-top-small {
+  margin-top: 20px;
+}
+
+.is-margin-bottom-small {
+  margin-top: 20px;
+}
+
+.is-padding-small {
+  padding: '60px';
+}
+
+.is-horizontal-center {
+  justify-content: center;
+}

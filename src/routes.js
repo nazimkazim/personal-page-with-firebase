@@ -22,6 +22,7 @@ import Uploadphotos from './Components/admin/photos/uploadphotos';
 import DisplayPhotos from './Components/admin/photos/displayPhotos';
 import AboutMeAdmin from './Components/admin/experience/about_me/index';
 import EditAboutMe from './Components/admin/experience/about_me/EditAboutMe';
+import RussianDetailed from './Components/russian-detailed/index';
 
 const Routes = props => {
   //console.log(props);
@@ -156,6 +157,13 @@ const Routes = props => {
           path="/sign_in"
           exact
           component={SignIn}
+        />
+        <PublicRoutes
+          {...props}
+          restricted={false}
+          path="/detailed/russian"
+          exact
+          component={RussianDetailed}
         />
         <Route exact component={Experience} path="/my_experience" />
         <Route exact component={Projects} path="/projects" />
