@@ -2,6 +2,7 @@ import React from 'react';
 import GroupOfPeople from '../../Resources/images/StatIcons/group-of-people-in-a-formation.svg';
 import International from '../../Resources/images/StatIcons/international.svg';
 import Official from '../../Resources/images/StatIcons/official.svg';
+import BookCover from '../../Resources/images/books_cover.jpg';
 
 const RussianDetailed = () => {
   const reasons = [
@@ -79,22 +80,54 @@ is-offset-one-fifth"
           </ul>
 
           <div className="has-text-centered">
-            <h1 className="is-size-4 is-margin-top-small">
+            <h1 className="is-size-4 is-margin-top-large">
               Numbers about Russian
             </h1>
           </div>
           <div className="columns is-margin-top-small">
             {statistics.map(stat => (
               <div className="column">
-                <div className="has-text-centered">{stat.StatHeader}</div>
+                <div className="has-text-centered has-text-weight-semibold">
+                  {stat.StatHeader}
+                </div>
                 <div className="is-flex is-horizontal-center">
                   <figure className="image is-128x128">
                     <img className="is-rounded" src={stat.StatPic} />
                   </figure>
                 </div>
-                <div className="has-text-centered">{stat.StatNumber}</div>
+                <div className="has-text-centered has-text-weight-semibold">
+                  {stat.StatNumber}
+                </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+      <div className="columns is-mobile">
+        <div
+          className="column is-three-fifths
+          is-offset-one-fifth"
+        >
+          <h2 className="is-size-4 has-text-centered is-margin-top-large">
+            But Why Learn Russian with Me Anyway
+          </h2>
+          <p className="is-margin-top-small">
+            I offer a structured, engaging and logical learning approach that
+            will take you from a novice to professional level. To achive that I
+            use various techniques and methods to make students speak starting
+            from the first lesson. But one of the most important part of my
+            teaching is material. In my teaching I use a communicative book
+            called "Russian Souvenir" by Irina Mozelova. This book is organized
+            so that a student moves quickly and smoothly in his/her learning
+            process, by utilizing numerous input and output techniques, that
+            stimulate and activate cognitive skills. Let me tell you about the
+            book.
+          </p>
+
+          <div className="card-content is-flex is-horizontal-center">
+            <figure class="image is-480x480">
+              <img src={BookCover} />
+            </figure>
           </div>
         </div>
       </div>
