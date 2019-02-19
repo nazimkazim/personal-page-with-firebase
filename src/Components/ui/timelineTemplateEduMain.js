@@ -4,12 +4,12 @@ import 'bulma/css/bulma.css';
 
 const TimelineTemplateEduMain = ({ education }) => {
   return (
-    <div class="timeline-item">
-      <div class="timeline-marker is-icon">
-        <i class="fa fa-circle" />
+    <div className="timeline-item">
+      <div className="timeline-marker is-icon">
+        <i className="fa fa-circle" />
       </div>
-      <div class="timeline-content">
-        <p class="heading">
+      <div className="timeline-content">
+        <p className="heading">
           <span>
             <Moment format="YYYY MMMM">{education.year_start}</Moment>-
             <Moment format="YYYY MMMM">{education.year_finish}</Moment>

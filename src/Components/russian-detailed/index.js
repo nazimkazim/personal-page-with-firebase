@@ -3,6 +3,8 @@ import GroupOfPeople from '../../Resources/images/StatIcons/group-of-people-in-a
 import International from '../../Resources/images/StatIcons/international.svg';
 import Official from '../../Resources/images/StatIcons/official.svg';
 import BookCover from '../../Resources/images/books_cover.jpg';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 const RussianDetailed = () => {
   const reasons = [
@@ -125,10 +127,73 @@ is-offset-one-fifth"
           </p>
 
           <div className="card-content is-flex is-horizontal-center">
-            <figure class="image is-480x480">
+            <figure class="image is-256x256">
               <img src={BookCover} />
             </figure>
           </div>
+          <h2 className="is-size-4 has-text-centered is-margin-top-large">
+            Content of the Course (Elementary Level)
+          </h2>
+          <Tabs>
+            <TabList>
+              <Tab>Vocabulry</Tab>
+              <Tab>Grammar</Tab>
+              <Tab>Functions</Tab>
+            </TabList>
+
+            <TabPanel>
+              <ul className="is-italic has-text-weight-semibold">
+                <li>Phrases for meeting people, saying goodbye</li>
+                <li>Occupation</li>
+                <li>Numbers 0-9</li>
+                <li>Professions</li>
+                <li>People (man, women, etc)</li>
+                <li>Verbs for describing everyday activities</li>
+                <li>Time. Parts of a day</li>
+                <li>Numbers 10 - 100</li>
+                <li>Events</li>
+                <li>Family. Registration form</li>
+                <li>Verbs, describing activities at the lesson</li>
+                <li>Personal things</li>
+                <li>Numbers 100 - 1000</li>
+                <li>Days of week</li>
+                <li>Events</li>
+                <li>Places in town (parks, restaurants, museums, etc)</li>
+                <li>
+                  Words for ordering in a cafe or buying a ticket for metro
+                </li>
+                <li>Russian way to say "last week/next week"</li>
+                <li>Countries</li>
+                <li>Months</li>
+                <li>Weather</li>
+                <li>Seasons. Verbs (to love, to call , to speak)</li>
+                <li>Traditions and nationalities</li>
+                <li>Furniture. Rooms</li>
+                <li>Verbs (to sleep, to want, to see, to watch, to hate)</li>
+                <li>Parts of house (wall, floor etc)</li>
+                <li>Outside the house (garden, forest)</li>
+                <li>Verbs, describing activities at home</li>
+                <li>Food 1. Phrses for shopping</li>
+                <li>Food 2. Phrases for restaurants</li>
+                <li>Food 3. Phrases for inviting and accepting invitations</li>
+                <li>Parts of body</li>
+                <li>Health</li>
+                <li>How to say, that something is allowed or forbidden</li>
+                <li>Emotions. Mood</li>
+                <li>Adjective. Describing a person</li>
+                <li>Adjective. Appearance</li>
+                <li>Clothes. Colors. Size</li>
+                <li>Transport. Dates</li>
+                <li>The compass. Verbs for travelling</li>
+              </ul>
+            </TabPanel>
+            <TabPanel>
+              <h2>Any content 2</h2>
+            </TabPanel>
+            <TabPanel>
+              <h2>Any content 3</h2>
+            </TabPanel>
+          </Tabs>
         </div>
       </div>
     </div>
