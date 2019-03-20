@@ -134,7 +134,7 @@ is-offset-one-fifth"
           <h2 className="is-size-4 has-text-centered is-margin-top-large">
             Content of the Course (Elementary Level)
           </h2>
-          <Tabs>
+          <Tabs className="is-margin-bottom-small">
             <TabList>
               <Tab>Vocabulry</Tab>
               <Tab>Grammar</Tab>
@@ -188,10 +188,104 @@ is-offset-one-fifth"
               </ul>
             </TabPanel>
             <TabPanel>
-              <h2>Any content 2</h2>
+              <ul className="is-italic has-text-weight-semibold">
+                <li>Personal Pronouns: ты, вы, я</li>
+                <li>Personal Pronouns: он, она, они, оно, мы</li>
+                <li>Personal Pronouns (object):меня,тебя,его,ее,нас,вас,их</li>
+                <li>1st conjugation of verbs</li>
+                <li>1 час, 2-4 часа, 5-20 часов</li>
+                <li>Consolidate conjugation of verbs</li>
+                <li>Possesive adjectives: мой, моя</li>
+                <li>Imperative form of verbs: читайте, слушайте etc</li>
+                <li>Construction "у меня есть"</li>
+                <li>Gender of nouns</li>
+                <li>У меня + событие</li>
+                <li>Nouns of plurals. Days of week</li>
+                <li>Endings of adjectives</li>
+                <li>Possesive adjectives</li>
+                <li>
+                  The prepositional case for locations. The past tense of the
+                  verb "to be"
+                </li>
+                <li>Months in the prepositional case (When?)</li>
+                <li>2nd conjugation of verbs</li>
+                <li>Nationalities</li>
+                <li>Neuter gender nouns in plural. Exceptions</li>
+                <li>The past tense</li>
+                <li>The accusative case for objects</li>
+                <li>Persnal pronouns with "Нужно","Надо","Нравится"</li>
+                <li>The instrumental case with the preposition "с"</li>
+                <li>The future tense</li>
+                <li>Construction "у меня был"</li>
+                <li>Construction "у меня был"</li>
+                <li>Personal pronouns with age, "можно", "нельзя"</li>
+                <li>Short form of adjectives</li>
+                <li>Endings of adjectives</li>
+                <li>The prepositional case for transport. Ordinal numbers</li>
+                <li>
+                  The accusative case for directions with prepositions "в", "на"
+                </li>
+                <li>The genitive case after the prepositions "из", "с"</li>
+              </ul>
             </TabPanel>
             <TabPanel>
-              <h2>Any content 3</h2>
+              <ul className="is-italic has-text-weight-semibold">
+                <li>Get acquainted. Introduce yourself and other people</li>
+                <li>Ask for a phone number</li>
+                <li>Ask for repetition</li>
+                <li>
+                  Start conversation with a person. Introduce yourself and other
+                  people
+                </li>
+                <li>Talk about your everyday activity</li>
+                <li>Tell time</li>
+                <li>Make an appointment</li>
+                <li>Talk about your family</li>
+                <li>Fill in the registration form</li>
+                <li>
+                  Understand your teacher's classroom instructions in Russian
+                </li>
+                <li>Ask people if they have something. Indicate something</li>
+                <li>Set a meeting. Talk about your plans for a week</li>
+                <li>Talk about your city. Ask where to go</li>
+                <li>Understand signs of a city</li>
+                <li>Buy a ticket for a metro</li>
+                <li>Order in a restaurant</li>
+                <li>Refuse an offer. Say where you were yesterday</li>
+                <li>Ask a person where he/she is from. Talk about countries</li>
+                <li>Talk about the weather</li>
+                <li>Talk about seasons</li>
+                <li>Talk about traditions and nationalities</li>
+                <li>Describe your house</li>
+                <li>Call for a master to fix broken things at home</li>
+                <li>Explain location of things in the house</li>
+                <li>Talk about your free time and ways to rest at home</li>
+                <li>
+                  Explain what you need to buy. Talk about food preferences
+                </li>
+                <li>Order and pay in a restaurant</li>
+                <li>
+                  Talk about recepes. Invite friends for dinner. Express
+                  admiration or criticism
+                </li>
+                <li>
+                  Talk to a doctor. Talk about health. Give recommendations
+                </li>
+                <li>Talk about lifestyle</li>
+                <li>Give recommendations</li>
+                <li>Talk about mood</li>
+                <li>Agree/Disagree</li>
+                <li>Talk about people's character</li>
+                <li>Describe appearance</li>
+                <li>Compare things</li>
+                <li>Agree to do smth</li>
+                <li>
+                  Talk with a taxi driver (price, address, etc). Order a taxi
+                </li>
+                <li>Cancel, reschedule or confirm a meeting</li>
+                <li>Talk about your trip</li>
+                <li>Describe cities</li>
+              </ul>
             </TabPanel>
           </Tabs>
         </div>

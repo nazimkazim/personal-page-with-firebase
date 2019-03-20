@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^3.6.2",
     "@material-ui/icons": "^3.0.1",
+    "build": "^0.1.4",
     "bulma": "^0.7.2",
     "bulma-extensions": "^4.0.0",
     "bulma-steps": "^2.2.1",
