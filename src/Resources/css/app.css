@@ -191,3 +191,29 @@ Anything slider end
 .is-horizontal-center {
   justify-content: center;
 }
+
+.nz {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 28px;
+  color: black;
+}
+
+.mai {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 28px;
+  color: white;
+}
+
+.social-icon {
+  font-size: 30px;
+  color: white;
+}
+
+.card {
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.offer-list li {
+  margin-top: 30px;
+}

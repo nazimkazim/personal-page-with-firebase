@@ -143,148 +143,155 @@ is-offset-one-fifth"
 
             <TabPanel>
               <ul className="is-italic has-text-weight-semibold">
-                <li>Phrases for meeting people, saying goodbye</li>
-                <li>Occupation</li>
-                <li>Numbers 0-9</li>
-                <li>Professions</li>
-                <li>People (man, women, etc)</li>
-                <li>Verbs for describing everyday activities</li>
-                <li>Time. Parts of a day</li>
-                <li>Numbers 10 - 100</li>
-                <li>Events</li>
-                <li>Family. Registration form</li>
-                <li>Verbs, describing activities at the lesson</li>
-                <li>Personal things</li>
-                <li>Numbers 100 - 1000</li>
-                <li>Days of week</li>
-                <li>Events</li>
-                <li>Places in town (parks, restaurants, museums, etc)</li>
+                <li>- Phrases for meeting people, saying goodbye</li>
+                <li>- Occupation</li>
+                <li>- Numbers 0-9</li>
+                <li>- Professions</li>
+                <li>- People (man, women, etc)</li>
+                <li>- Verbs for describing everyday activities</li>
+                <li>- Time. Parts of a day</li>
+                <li>- Numbers 10 - 100</li>
+                <li>- Events</li>
+                <li>- Family. Registration form</li>
+                <li>- Verbs, describing activities at the lesson</li>
+                <li>- Personal things</li>
+                <li>- Numbers 100 - 1000</li>
+                <li>- Days of week</li>
+                <li>- Events</li>
+                <li>- Places in town (parks, restaurants, museums, etc)</li>
                 <li>
-                  Words for ordering in a cafe or buying a ticket for metro
+                  - Words for ordering in a cafe or buying a ticket for metro
                 </li>
-                <li>Russian way to say "last week/next week"</li>
-                <li>Countries</li>
-                <li>Months</li>
-                <li>Weather</li>
-                <li>Seasons. Verbs (to love, to call , to speak)</li>
-                <li>Traditions and nationalities</li>
-                <li>Furniture. Rooms</li>
-                <li>Verbs (to sleep, to want, to see, to watch, to hate)</li>
-                <li>Parts of house (wall, floor etc)</li>
-                <li>Outside the house (garden, forest)</li>
-                <li>Verbs, describing activities at home</li>
-                <li>Food 1. Phrses for shopping</li>
-                <li>Food 2. Phrases for restaurants</li>
-                <li>Food 3. Phrases for inviting and accepting invitations</li>
-                <li>Parts of body</li>
-                <li>Health</li>
-                <li>How to say, that something is allowed or forbidden</li>
-                <li>Emotions. Mood</li>
-                <li>Adjective. Describing a person</li>
-                <li>Adjective. Appearance</li>
-                <li>Clothes. Colors. Size</li>
-                <li>Transport. Dates</li>
-                <li>The compass. Verbs for travelling</li>
+                <li>- Russian way to say "last week/next week"</li>
+                <li>- Countries</li>
+                <li>- Months</li>
+                <li>- Weather</li>
+                <li>- Seasons. Verbs (to love, to call , to speak)</li>
+                <li>- Traditions and nationalities</li>
+                <li>- Furniture. Rooms</li>
+                <li>- Verbs (to sleep, to want, to see, to watch, to hate)</li>
+                <li>- Parts of house (wall, floor etc)</li>
+                <li>- Outside the house (garden, forest)</li>
+                <li>- Verbs, describing activities at home</li>
+                <li>- Food 1. Phrses for shopping</li>
+                <li>- Food 2. Phrases for restaurants</li>
+                <li>
+                  - Food 3. Phrases for inviting and accepting invitations
+                </li>
+                <li>- Parts of body</li>
+                <li>- Health</li>
+                <li>- How to say, that something is allowed or forbidden</li>
+                <li>- Emotions. Mood</li>
+                <li>- Adjective. Describing a person</li>
+                <li>- Adjective. Appearance</li>
+                <li>- Clothes. Colors. Size</li>
+                <li>- Transport. Dates</li>
+                <li>- The compass. Verbs for travelling</li>
               </ul>
             </TabPanel>
             <TabPanel>
               <ul className="is-italic has-text-weight-semibold">
-                <li>Personal Pronouns: ты, вы, я</li>
-                <li>Personal Pronouns: он, она, они, оно, мы</li>
-                <li>Personal Pronouns (object):меня,тебя,его,ее,нас,вас,их</li>
-                <li>1st conjugation of verbs</li>
-                <li>1 час, 2-4 часа, 5-20 часов</li>
-                <li>Consolidate conjugation of verbs</li>
-                <li>Possesive adjectives: мой, моя</li>
-                <li>Imperative form of verbs: читайте, слушайте etc</li>
-                <li>Construction "у меня есть"</li>
-                <li>Gender of nouns</li>
-                <li>У меня + событие</li>
-                <li>Nouns of plurals. Days of week</li>
-                <li>Endings of adjectives</li>
-                <li>Possesive adjectives</li>
+                <li>- Personal Pronouns: ты, вы, я</li>
+                <li>- Personal Pronouns: он, она, они, оно, мы</li>
                 <li>
-                  The prepositional case for locations. The past tense of the
+                  - Personal Pronouns (object):меня,тебя,его,ее,нас,вас,их
+                </li>
+                <li>- 1st conjugation of verbs</li>
+                <li>- 1 час, 2-4 часа, 5-20 часов</li>
+                <li>- Consolidate conjugation of verbs</li>
+                <li>- Possesive adjectives: мой, моя</li>
+                <li>- Imperative form of verbs: читайте, слушайте etc</li>
+                <li>- Construction "у меня есть"</li>
+                <li>- Gender of nouns</li>
+                <li>- У меня + событие</li>
+                <li>- Nouns of plurals. Days of week</li>
+                <li>- Endings of adjectives</li>
+                <li>- Possesive adjectives</li>
+                <li>
+                  - The prepositional case for locations. The past tense of the
                   verb "to be"
                 </li>
-                <li>Months in the prepositional case (When?)</li>
-                <li>2nd conjugation of verbs</li>
-                <li>Nationalities</li>
-                <li>Neuter gender nouns in plural. Exceptions</li>
-                <li>The past tense</li>
-                <li>The accusative case for objects</li>
-                <li>Persnal pronouns with "Нужно","Надо","Нравится"</li>
-                <li>The instrumental case with the preposition "с"</li>
-                <li>The future tense</li>
-                <li>Construction "у меня был"</li>
-                <li>Construction "у меня был"</li>
-                <li>Personal pronouns with age, "можно", "нельзя"</li>
-                <li>Short form of adjectives</li>
-                <li>Endings of adjectives</li>
-                <li>The prepositional case for transport. Ordinal numbers</li>
+                <li>- Months in the prepositional case (When?)</li>
+                <li>- 2nd conjugation of verbs</li>
+                <li>- Nationalities</li>
+                <li>- Neuter gender nouns in plural. Exceptions</li>
+                <li>- The past tense</li>
+                <li>- The accusative case for objects</li>
+                <li>- Persnal pronouns with "Нужно","Надо","Нравится"</li>
+                <li>- The instrumental case with the preposition "с"</li>
+                <li>- The future tense</li>
+                <li>- Construction "у меня был"</li>
+                <li>- Construction "у меня был"</li>
+                <li>- Personal pronouns with age, "можно", "нельзя"</li>
+                <li>- Short form of adjectives</li>
+                <li>- Endings of adjectives</li>
+                <li>- The prepositional case for transport. Ordinal numbers</li>
                 <li>
-                  The accusative case for directions with prepositions "в", "на"
+                  - The accusative case for directions with prepositions "в",
+                  "на"
                 </li>
-                <li>The genitive case after the prepositions "из", "с"</li>
+                <li>- The genitive case after the prepositions "из", "с"</li>
               </ul>
             </TabPanel>
             <TabPanel>
               <ul className="is-italic has-text-weight-semibold">
-                <li>Get acquainted. Introduce yourself and other people</li>
-                <li>Ask for a phone number</li>
-                <li>Ask for repetition</li>
+                <li>- Get acquainted. Introduce yourself and other people</li>
+                <li>- Ask for a phone number</li>
+                <li>- Ask for repetition</li>
                 <li>
-                  Start conversation with a person. Introduce yourself and other
-                  people
+                  - Start conversation with a person. Introduce yourself and
+                  other people
                 </li>
-                <li>Talk about your everyday activity</li>
-                <li>Tell time</li>
-                <li>Make an appointment</li>
-                <li>Talk about your family</li>
-                <li>Fill in the registration form</li>
+                <li>- Talk about your everyday activity</li>
+                <li>- Tell time</li>
+                <li>- Make an appointment</li>
+                <li>- Talk about your family</li>
+                <li>- Fill in the registration form</li>
                 <li>
-                  Understand your teacher's classroom instructions in Russian
+                  - Understand your teacher's classroom instructions in Russian
                 </li>
-                <li>Ask people if they have something. Indicate something</li>
-                <li>Set a meeting. Talk about your plans for a week</li>
-                <li>Talk about your city. Ask where to go</li>
-                <li>Understand signs of a city</li>
-                <li>Buy a ticket for a metro</li>
-                <li>Order in a restaurant</li>
-                <li>Refuse an offer. Say where you were yesterday</li>
-                <li>Ask a person where he/she is from. Talk about countries</li>
-                <li>Talk about the weather</li>
-                <li>Talk about seasons</li>
-                <li>Talk about traditions and nationalities</li>
-                <li>Describe your house</li>
-                <li>Call for a master to fix broken things at home</li>
-                <li>Explain location of things in the house</li>
-                <li>Talk about your free time and ways to rest at home</li>
+                <li>- Ask people if they have something. Indicate something</li>
+                <li>- Set a meeting. Talk about your plans for a week</li>
+                <li>- Talk about your city. Ask where to go</li>
+                <li>- Understand signs of a city</li>
+                <li>- Buy a ticket for a metro</li>
+                <li>- Order in a restaurant</li>
+                <li>- Refuse an offer. Say where you were yesterday</li>
                 <li>
-                  Explain what you need to buy. Talk about food preferences
+                  - Ask a person where he/she is from. Talk about countries
                 </li>
-                <li>Order and pay in a restaurant</li>
+                <li>- Talk about the weather</li>
+                <li>- Talk about seasons</li>
+                <li>- Talk about traditions and nationalities</li>
+                <li>- Describe your house</li>
+                <li>- Call for a master to fix broken things at home</li>
+                <li>- Explain location of things in the house</li>
+                <li>- Talk about your free time and ways to rest at home</li>
                 <li>
-                  Talk about recepes. Invite friends for dinner. Express
+                  - Explain what you need to buy. Talk about food preferences
+                </li>
+                <li>- Order and pay in a restaurant</li>
+                <li>
+                  - Talk about recepes. Invite friends for dinner. Express
                   admiration or criticism
                 </li>
                 <li>
-                  Talk to a doctor. Talk about health. Give recommendations
+                  - Talk to a doctor. Talk about health. Give recommendations
                 </li>
-                <li>Talk about lifestyle</li>
-                <li>Give recommendations</li>
-                <li>Talk about mood</li>
-                <li>Agree/Disagree</li>
-                <li>Talk about people's character</li>
-                <li>Describe appearance</li>
-                <li>Compare things</li>
-                <li>Agree to do smth</li>
+                <li>- Talk about lifestyle</li>
+                <li>- Give recommendations</li>
+                <li>- Talk about mood</li>
+                <li>- Agree/Disagree</li>
+                <li>- Talk about people's character</li>
+                <li>- Describe appearance</li>
+                <li>- Compare things</li>
+                <li>- Agree to do smth</li>
                 <li>
-                  Talk with a taxi driver (price, address, etc). Order a taxi
+                  - Talk with a taxi driver (price, address, etc). Order a taxi
                 </li>
-                <li>Cancel, reschedule or confirm a meeting</li>
-                <li>Talk about your trip</li>
-                <li>Describe cities</li>
+                <li>- Cancel, reschedule or confirm a meeting</li>
+                <li>- Talk about your trip</li>
+                <li>- Describe cities</li>
               </ul>
             </TabPanel>
           </Tabs>

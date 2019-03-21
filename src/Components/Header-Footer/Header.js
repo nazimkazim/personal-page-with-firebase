@@ -21,7 +21,8 @@ export default class Header extends Component {
           <Navbar.Brand>
             <Navbar.Item renderAs="a" href="/">
               <Link to="/">
-                <img src="https://i.imgur.com/9jQaBuq.png" alt="Dew Ventures" />
+                <span className="nz">Nz</span>
+                <span className="mai">Mai</span>
               </Link>
             </Navbar.Item>
             <Navbar.Burger
@@ -39,6 +40,13 @@ export default class Header extends Component {
               </Navbar.Item>
               <Navbar.Item>
                 <Link to="/projects">Projects</Link>
+              </Navbar.Item>
+            </Navbar.Container>
+            <Navbar.Container position="end">
+              <Navbar.Item className="social-icon">
+                <a href="https://www.instagram.com/nz_mai/" target="_blank">
+                  <i class="fab fa-instagram" />
+                </a>
               </Navbar.Item>
             </Navbar.Container>
           </Navbar.Menu>
