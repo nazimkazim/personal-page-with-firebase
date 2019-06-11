@@ -1,0 +1,29 @@
+[debug] [2019-03-25T09:45:02.869Z] ----------------------------------------------------------------------
+[debug] [2019-03-25T09:45:02.879Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-03-25T09:45:02.880Z] CLI Version:   6.5.0
+[debug] [2019-03-25T09:45:02.880Z] Platform:      win32
+[debug] [2019-03-25T09:45:02.880Z] Node Version:  v8.15.0
+[debug] [2019-03-25T09:45:02.881Z] Time:          Mon Mar 25 2019 15:45:02 GMT+0600 (Центральная Азия (зима))
+[debug] [2019-03-25T09:45:02.881Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-03-25T09:45:02.982Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-03-25T09:45:02.983Z] > authorizing via signed-in user
+[debug] [2019-03-25T09:45:02.983Z] [iam] checking project personal-page-dac5f for permissions ["firebase.projects.get"]
+[debug] [2019-03-25T09:45:02.989Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-03-25T09:45:02.990Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-03-25T09:45:03.467Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-25T09:45:03.533Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-page-dac5f:testIamPermissions  
+
+[debug] [2019-03-25T09:45:04.797Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-25T09:45:04.802Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/personal-page-dac5f  
+ 
+[debug] [2019-03-25T09:45:05.979Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\coding\React Practice Course, learn by doing projects\nzmai_personal_website'...
+[info] 
+[debug] [2019-03-25T09:45:05.985Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/355329486684/clients/_:getWebAppConfig  
+ 
+[debug] [2019-03-25T09:45:06.867Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: build
+[info] +  hosting: Local server: http://localhost:5000

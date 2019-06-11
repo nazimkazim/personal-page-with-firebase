@@ -20,9 +20,7 @@ const firebaseExp = firebaseDB.ref('experience');
 const firebaseRevs = firebaseDB.ref('reviews');
 const firebasePromotions = firebaseDB.ref('promotions');
 const firebaseEduMain = firebaseDB.ref('education_main');
-const firebaseEduAdd = firebaseDB
-  .ref('education_additional')
-  .orderByChild('year_finish');
+const firebaseEduAdd = firebaseDB.ref('education_additional');
 const firebaseProjects = firebaseDB.ref('projects');
 const firebasePhotos = firebaseDB.ref('photos');
 const firebaseAboutMe = firebaseDB.ref('about_me');
