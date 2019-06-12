@@ -1,49 +1,80 @@
-[debug] [2019-06-11T17:19:51.573Z] ----------------------------------------------------------------------
-[debug] [2019-06-11T17:19:51.627Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2019-06-11T17:19:51.628Z] CLI Version:   6.5.0
-[debug] [2019-06-11T17:19:51.628Z] Platform:      win32
-[debug] [2019-06-11T17:19:51.628Z] Node Version:  v8.15.0
-[debug] [2019-06-11T17:19:51.635Z] Time:          Tue Jun 11 2019 23:19:51 GMT+0600 (Центральная Азия (зима))
-[debug] [2019-06-11T17:19:51.636Z] ----------------------------------------------------------------------
+[debug] [2019-06-12T11:13:24.277Z] ----------------------------------------------------------------------
+[debug] [2019-06-12T11:13:24.292Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --debug
+[debug] [2019-06-12T11:13:24.294Z] CLI Version:   6.5.0
+[debug] [2019-06-12T11:13:24.294Z] Platform:      win32
+[debug] [2019-06-12T11:13:24.294Z] Node Version:  v8.15.0
+[debug] [2019-06-12T11:13:24.296Z] Time:          Wed Jun 12 2019 17:13:24 GMT+0600 (Центральная Азия (зима))
+[debug] [2019-06-12T11:13:24.296Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2019-06-11T17:19:51.875Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-06-11T17:19:51.876Z] > authorizing via signed-in user
-[debug] [2019-06-11T17:19:51.877Z] [iam] checking project personal-page-dac5f for permissions ["firebase.projects.get"]
-[debug] [2019-06-11T17:19:51.886Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2019-06-11T17:19:51.889Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+[debug] [2019-06-12T11:13:24.459Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-06-12T11:13:24.461Z] > authorizing via signed-in user
+[debug] [2019-06-12T11:13:24.461Z] [iam] checking project personal-page-dac5f for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-06-12T11:13:24.466Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-06-12T11:13:24.467Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
  <request body omitted>
-[debug] [2019-06-11T17:19:53.080Z] <<< HTTP RESPONSE 200
-[debug] [2019-06-11T17:19:53.456Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-page-dac5f:testIamPermissions  
+[debug] [2019-06-12T11:13:25.040Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-12T11:13:25.079Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-page-dac5f:testIamPermissions  
 
-[debug] [2019-06-11T17:19:56.301Z] <<< HTTP RESPONSE 200
-[debug] [2019-06-11T17:19:56.308Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/personal-page-dac5f  
+[debug] [2019-06-12T11:13:26.375Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-12T11:13:26.381Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/personal-page-dac5f  
  
-[debug] [2019-06-11T17:20:39.349Z] Error: connect ETIMEDOUT 173.194.222.95:443
-    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1191:14)
-[error] 
-[error] Error: Server Error. connect ETIMEDOUT 173.194.222.95:443
-[debug] [2019-06-11T17:22:17.527Z] ----------------------------------------------------------------------
-[debug] [2019-06-11T17:22:17.530Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only hosting
-[debug] [2019-06-11T17:22:17.530Z] CLI Version:   6.5.0
-[debug] [2019-06-11T17:22:17.530Z] Platform:      win32
-[debug] [2019-06-11T17:22:17.531Z] Node Version:  v8.15.0
-[debug] [2019-06-11T17:22:17.531Z] Time:          Tue Jun 11 2019 23:22:17 GMT+0600 (Центральная Азия (зима))
-[debug] [2019-06-11T17:22:17.531Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2019-06-11T17:22:17.542Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-06-11T17:22:17.542Z] > authorizing via signed-in user
-[debug] [2019-06-11T17:22:17.542Z] [iam] checking project personal-page-dac5f for permissions ["firebase.projects.get"]
-[debug] [2019-06-11T17:22:17.545Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-page-dac5f:testIamPermissions  
+[debug] [2019-06-12T11:13:28.341Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'personal-page-dac5f'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-06-12T11:13:28.356Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/personal-page-dac5f/versions  
 
-[debug] [2019-06-11T17:22:18.893Z] <<< HTTP RESPONSE 200
-[debug] [2019-06-11T17:22:18.900Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/personal-page-dac5f  
- 
-[debug] [2019-06-11T17:22:20.045Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-12T11:13:39.256Z] <<< HTTP RESPONSE 200
+[info] i  hosting[personal-page-dac5f]: beginning deploy...
+[info] i  hosting[personal-page-dac5f]: found 19 files in build
+[debug] [2019-06-12T11:13:39.340Z] [hosting] hash cache [YnVpbGQ] load error: lines is not defined
+[debug] [2019-06-12T11:13:40.353Z] [hosting] hash cache [YnVpbGQ] stored for 19 files
+[debug] [2019-06-12T11:13:40.353Z] [hosting][hash queue][FINAL]
+[debug] [2019-06-12T11:13:40.354Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/personal-page-dac5f/versions/38db370cfad49edc:populateFiles  
+ <request body omitted>
+[info] i  hosting: adding files to version [0/19] (0%)
+[debug] [2019-06-12T11:13:42.319Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-12T11:13:42.321Z] [hosting][populate queue][FINAL]
+[debug] [2019-06-12T11:13:42.321Z] [hosting] uploads queued: 0
+[debug] [2019-06-12T11:13:42.322Z] [hosting][upload queue][FINAL]
+[info] +  hosting[personal-page-dac5f]: file upload complete
+[debug] [2019-06-12T11:13:42.324Z] [hosting] deploy completed after 3064ms
+[debug] [2019-06-12T11:13:42.660Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "personal-page-dac5f"
+    },
+    "site": "personal-page-dac5f",
+    "version": "sites/personal-page-dac5f/versions/38db370cfad49edc"
+  }
+]
+[info] i  hosting[personal-page-dac5f]: finalizing version...
+[debug] [2019-06-12T11:13:42.662Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/personal-page-dac5f/versions/38db370cfad49edc?updateMask=status  
+
+[debug] [2019-06-12T11:13:44.051Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-12T11:13:44.052Z] [hosting] finalized version for personal-page-dac5f:
+[info] +  hosting[personal-page-dac5f]: version finalized
+[info] i  hosting[personal-page-dac5f]: releasing new version...
+[debug] [2019-06-12T11:13:44.055Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/personal-page-dac5f/releases?version_name=sites/personal-page-dac5f/versions/38db370cfad49edc  
+
+[debug] [2019-06-12T11:13:45.860Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-12T11:13:45.861Z] [hosting] release:
+[info] +  hosting[personal-page-dac5f]: release complete
 [info] 
-[info] === Serving from 'C:\coding\React Practice Course, learn by doing projects\nzmai_personal_website'...
+[info] +  Deploy complete!
 [info] 
-[debug] [2019-06-11T17:22:20.053Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/355329486684/clients/_:getWebAppConfig  
- 
-[debug] [2019-06-11T17:22:20.842Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: build
-[info] +  hosting: Local server: http://localhost:5000
+[info] Project Console: https://console.firebase.google.com/project/personal-page-dac5f/overview
+[info] Hosting URL: https://personal-page-dac5f.firebaseapp.com

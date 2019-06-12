@@ -21,7 +21,7 @@ export default class Header extends Component {
           <Navbar.Brand>
             <Navbar.Item renderAs="a" href="/">
               <Link to="/">
-                <span className="nz">Nz</span>
+                <span className="nz">NzN</span>
                 <span className="mai">Mai</span>
               </Link>
             </Navbar.Item>
