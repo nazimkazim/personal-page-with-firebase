@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { firebaseEduAdd } from '../../firebase';
 import { firebaseLooper } from '../ui/misc';
-import { reverseArray } from '../ui/misc';
+import { reverseArray, descOrder } from '../ui/misc';
 import TimelineTemplateEduAdd from '../ui/timelineTemplateEduAdd';
 import Fade from 'react-reveal/Fade';
 
@@ -16,7 +16,7 @@ class AdditionalEducation extends Component {
       const educations_additional = firebaseLooper(snapshot);
 
       this.setState({
-        educations_additional: reverseArray(educations_additional)
+        educations_additional: descOrder(educations_additional)
       });
     });
   }

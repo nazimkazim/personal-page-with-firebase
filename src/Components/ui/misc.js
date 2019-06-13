@@ -19,6 +19,18 @@ export const reverseArray = actualArr => {
   return reversedArray;
 };
 
+export const descOrder = actualArr => {
+  actualArr.sort(function(a, b) {
+    // Turn your strings into dates, and then subtract them
+    // to get a value that is either negative, positive, or zero.
+    return new Date(b.year_finish) - new Date(a.year_finish);
+  });
+
+  console.log(actualArr);
+
+  return actualArr;
+};
+
 export const validate = element => {
   let error = [true, ''];
 
