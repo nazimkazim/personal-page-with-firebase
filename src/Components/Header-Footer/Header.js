@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Navbar } from 'react-bulma-components';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Navbar } from "react-bulma-components";
+import { Link } from "react-router-dom";
 
 export default class Header extends Component {
   // set active state for hamburger
@@ -14,7 +14,7 @@ export default class Header extends Component {
     return (
       <div id="header">
         <Navbar
-          style={{ background: '#20BEEE' }}
+          style={{ background: "#20BEEE" }}
           fixed="top"
           active={this.state.active}
         >
@@ -44,9 +44,17 @@ export default class Header extends Component {
             </Navbar.Container>
             <Navbar.Container position="end">
               <Navbar.Item className="social-icon">
-                <a href="https://www.instagram.com/nz_mai/" target="_blank">
+                <a
+                  href="https://www.instagram.com/nzmai777/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <i className="fab fa-instagram" />
                 </a>
+              </Navbar.Item>
+              <Navbar.Item>
+                <i className="fab fa-whatsapp" />
+                <p>+7-777-348-65-18</p>
               </Navbar.Item>
             </Navbar.Container>
           </Navbar.Menu>

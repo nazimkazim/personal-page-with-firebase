@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { firebaseAboutMe, firebasePhotos } from './../../../firebase';
-import { firebaseLooper } from '../../ui/misc';
-import 'bulma/css/bulma.css';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { firebaseAboutMe, firebasePhotos } from "./../../../firebase";
+import { firebaseLooper } from "../../ui/misc";
+import "bulma/css/bulma.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 class Bio extends Component {
   state = {
@@ -12,14 +12,14 @@ class Bio extends Component {
     photos: []
   };
   componentDidMount() {
-    firebaseAboutMe.once('value').then(snapshot => {
+    firebaseAboutMe.once("value").then(snapshot => {
       const about_me = firebaseLooper(snapshot);
       this.setState({
         about_me
       });
     });
 
-    firebasePhotos.once('value').then(snapshot => {
+    firebasePhotos.once("value").then(snapshot => {
       const photos = firebaseLooper(snapshot);
       this.setState({
         photos
@@ -43,7 +43,7 @@ class Bio extends Component {
                     {this.state.photos
                       ? this.state.photos.map(photo => (
                           <div>
-                            <img src={photo.url} />
+                            <img src={photo.url} alt="" />
                             <p className="legend">{photo.caption}</p>
                           </div>
                         ))

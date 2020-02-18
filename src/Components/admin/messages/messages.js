@@ -1,29 +1,28 @@
 import React, { Component } from "react";
-import { firebase } from "../../../firebase";
 import AdminLayout from "../../../Hoc/AdminLayout";
-import { firebasePhotos } from "../../../firebase";
+import { firebasePromotions } from "../../../firebase";
 import { firebaseLooper } from "../../ui/misc";
 import { css } from "react-emotion";
 import { BarLoader } from "react-spinners";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-class Adminphoto extends Component {
+class DisplayMessages extends Component {
   state = {
     isLoading: true,
-    photos: [],
+    promotions: [],
     marginTop: "40px",
     successForm: ""
   };
 
   componentDidMount() {
-    firebasePhotos.once("value").then(snapshot => {
-      const photos = firebaseLooper(snapshot);
+    firebasePromotions.once("value").then(snapshot => {
+      const promotions = firebaseLooper(snapshot);
 
       this.setState({
         isLoading: false,
         marginTop: "0px",
-        photos: photos
+        promotions: promotions
       });
     });
   }
@@ -40,7 +39,7 @@ class Adminphoto extends Component {
     }, 2000);
   }
 
-  deleteItem(event, photo) {
+  deleteItem(event, promotion) {
     event.preventDefault();
     confirmAlert({
       title: "Confirm to submit",
@@ -49,17 +48,8 @@ class Adminphoto extends Component {
         {
           label: "Yes",
           onClick: () => {
-            firebase
-              .storage()
-              .refFromURL(photo.url)
-              .delete()
-              .then(() => {
-                this.successForm("Removed successfully");
-                this.props.history.push("/admin_photos");
-              });
-
-            firebasePhotos
-              .child(photo.id)
+            firebasePromotions
+              .child(promotion.id)
               .remove()
               .then(() => {
                 this.successForm("Removed successfully");
@@ -107,29 +97,30 @@ class Adminphoto extends Component {
               )}
             </div>
             <div className="columns is-multiline" style={{ marginTop: "30px" }}>
-              {this.state.photos
-                ? this.state.photos.map((photo, i) => (
-                    <div
-                      key={i}
-                      className="column is-3 card"
-                      id="exp-cell-company"
-                      style={{ margin: "3px" }}
-                    >
-                      <figure className="image">
-                        <img src={photo.url} alt="" />
-                      </figure>
-                      <span>{photo.caption}</span>
-                      <span
-                        className="delete-icon"
-                        onClick={event => {
-                          this.deleteItem(event, photo);
-                        }}
+              <ul>
+                {this.state.promotions
+                  ? this.state.promotions.map((promotion, i) => (
+                      <li
+                        key={i}
+                        className="column is-3 card"
+                        id="exp-cell-company"
+                        style={{ margin: "3px" }}
                       >
-                        <i class="fa fa-trash" aria-hidden="true" />
-                      </span>
-                    </div>
-                  ))
-                : null}
+                        <span>{promotion.name}</span>
+                        <span>{promotion.email}</span>
+                        <span>{promotion.country}</span>
+                        <span
+                          className="delete-icon"
+                          onClick={event => {
+                            this.deleteItem(event, promotion);
+                          }}
+                        >
+                          <i class="fa fa-trash" aria-hidden="true" />
+                        </span>
+                      </li>
+                    ))
+                  : null}
+              </ul>
             </div>
           </div>
         </React.Fragment>
@@ -138,4 +129,4 @@ class Adminphoto extends Component {
   }
 }
 
-export default Adminphoto;
+export default DisplayMessages;

@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { firebaseEduAdd } from '../../firebase';
-import { firebaseLooper } from '../ui/misc';
-import { reverseArray, descOrder } from '../ui/misc';
-import TimelineTemplateEduAdd from '../ui/timelineTemplateEduAdd';
-import Fade from 'react-reveal/Fade';
+import React, { Component } from "react";
+import { firebaseEduAdd } from "../../firebase";
+import { firebaseLooper } from "../ui/misc";
+import { descOrder } from "../ui/misc";
+import TimelineTemplateEduAdd from "../ui/timelineTemplateEduAdd";
+import Fade from "react-reveal/Fade";
 
 class AdditionalEducation extends Component {
   state = {
@@ -12,7 +12,7 @@ class AdditionalEducation extends Component {
   };
 
   componentDidMount() {
-    firebaseEduAdd.once('value').then(snapshot => {
+    firebaseEduAdd.once("value").then(snapshot => {
       const educations_additional = firebaseLooper(snapshot);
 
       this.setState({
@@ -32,7 +32,7 @@ class AdditionalEducation extends Component {
 
   render() {
     return (
-      <div className="timeline" style={{ padding: '30px' }}>
+      <div className="timeline" style={{ padding: "30px" }}>
         <header>
           <h2 className="has-text-centered tag is-primary is-size-6">
             Additional Education

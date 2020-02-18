@@ -1,65 +1,69 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { firebase } from '../../../firebase';
+import React from "react";
+import { Link } from "react-router-dom";
+import { firebase } from "../../../firebase";
 
 const AdminNav = () => {
   const links = [
-    { title: 'About me', linkTo: '/admin_about_me' },
+    { title: "About me", linkTo: "/admin_about_me" },
     {
-      title: 'Experience',
-      linkTo: '/admin_experience'
+      title: "Experience",
+      linkTo: "/admin_experience"
     },
     {
-      title: 'Add Experience',
-      linkTo: '/admin_experience/edit_experience'
+      title: "Add Experience",
+      linkTo: "/admin_experience/edit_experience"
     },
     {
-      title: 'Education',
-      linkTo: '/admin_education'
+      title: "Education",
+      linkTo: "/admin_education"
     },
     {
-      title: 'Add Main Education',
-      linkTo: '/admin_education/edit_main_education'
+      title: "Add Main Education",
+      linkTo: "/admin_education/edit_main_education"
     },
     {
-      title: 'Add Additional Education',
-      linkTo: '/admin_education/edit_additional_education'
+      title: "Add Additional Education",
+      linkTo: "/admin_education/edit_additional_education"
     },
     {
-      title: 'Reviews',
-      linkTo: '/admin_reviews'
+      title: "Reviews",
+      linkTo: "/admin_reviews"
     },
     {
-      title: 'Add Reviews',
-      linkTo: '/admin_reviews/edit_review'
+      title: "Add Reviews",
+      linkTo: "/admin_reviews/edit_review"
     },
     {
-      title: 'Projects',
-      linkTo: '/admin_projects'
+      title: "Projects",
+      linkTo: "/admin_projects"
     },
     {
-      title: 'Add Projects',
-      linkTo: '/admin_projects/edit_project'
+      title: "Add Projects",
+      linkTo: "/admin_projects/edit_project"
     },
     {
-      title: 'Add Photos',
-      linkTo: '/admin_photos/edit_photos'
+      title: "Add Photos",
+      linkTo: "/admin_photos/edit_photos"
     },
     {
-      title: 'See Photos',
-      linkTo: '/admin_photos'
+      title: "See Photos",
+      linkTo: "/admin_photos"
+    },
+    {
+      title: "Messages",
+      linkTo: "/admin_messages"
     }
   ];
 
   const renderItems = () =>
     links.map(link => (
       <Link to={link.linkTo} key={link.title}>
-        <a className="panel-block">
+        <span className="panel-block">
           <span className="panel-icon">
             <i className="fas fa-user-edit" aria-hidden="true" />
           </span>
           {link.title}
-        </a>
+        </span>
       </Link>
     ));
 
@@ -69,10 +73,10 @@ const AdminNav = () => {
       .signOut()
       .then(
         () => {
-          console.log('log out');
+          console.log("log out");
         },
         error => {
-          console.log('error logging out');
+          console.log("error logging out");
         }
       );
   };

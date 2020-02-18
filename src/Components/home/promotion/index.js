@@ -1,29 +1,65 @@
-import React, { Component } from 'react';
-import classNames from 'classnames';
-import { firebasePromotions } from '../../../firebase';
-import FormField from '../../ui/formFields';
-import { validate } from '../../ui/misc';
+import React, { Component } from "react";
+import classNames from "classnames";
+import { firebasePromotions } from "../../../firebase";
+import FormField from "../../ui/formFields";
+import { validate } from "../../ui/misc";
 
 class ContactMe extends Component {
   state = {
-    isActive: '',
+    isActive: "",
     formError: false,
-    formSuccess: '',
+    formSuccess: "",
     formdata: {
       email: {
-        element: 'input',
-        value: '',
+        element: "input",
+        value: "",
         config: {
-          name: 'email_input',
-          type: 'email',
-          placeholder: 'Enter your email'
+          name: "email_input",
+          type: "email",
+          placeholder: "Enter your email"
         },
         validation: {
           required: true,
           email: true
         },
-        valid: 'false',
-        validationMessage: ''
+        valid: "false",
+        validationMessage: ""
+      },
+      name: {
+        element: "input",
+        value: "",
+        config: {
+          name: "name_input",
+          type: "text",
+          placeholder: "Enter your name"
+        },
+        validation: {
+          required: true
+        },
+        valid: "false",
+        validationMessage: ""
+      },
+      country: {
+        element: "input",
+        value: "",
+        config: {
+          name: "country_input",
+          type: "text",
+          placeholder: "Enter your country"
+        },
+        validation: {
+          required: true
+        },
+        valid: "false",
+        validationMessage: ""
+      },
+      checked: {
+        value: "false",
+        validation: {
+          required: false
+        },
+        valid: "false",
+        validationMessage: ""
       }
     }
   };
@@ -31,14 +67,14 @@ class ContactMe extends Component {
   modalOpen = event => {
     event.preventDefault();
     this.setState({
-      isActive: 'is-active'
+      isActive: "is-active"
     });
   };
 
   modalClose = event => {
     event.preventDefault();
     this.setState({
-      isActive: ''
+      isActive: ""
     });
   };
 
@@ -52,14 +88,14 @@ class ContactMe extends Component {
       formIsValid =
         this.state.formdata[key].valid &&
         formIsValid &&
-        this.state.formdata[key].value !== '';
+        this.state.formdata[key].value !== "";
     }
 
     if (formIsValid) {
       firebasePromotions
-        .orderByChild('email')
+        .orderByChild("email")
         .equalTo(dataToSubmit.email)
-        .once('value')
+        .once("value")
         .then(snapshot => {
           if (snapshot.val() === null) {
             firebasePromotions.push(dataToSubmit);
@@ -102,15 +138,18 @@ class ContactMe extends Component {
     };
 
     for (let key in newFormdata) {
-      newFormdata[key].value = '';
+      if (key === "checked") {
+        newFormdata[key].value = "false";
+      }
+      newFormdata[key].value = "";
       newFormdata[key].valid = false;
-      newFormdata[key].validationMessage = '';
+      newFormdata[key].validationMessage = "";
     }
 
     this.setState({
       formError: false,
       formdata: newFormdata,
-      formSuccess: type ? 'Congratulations' : 'already in the database'
+      formSuccess: type ? "Congratulations" : "already in the database"
     });
 
     this.successMessage();
@@ -119,20 +158,20 @@ class ContactMe extends Component {
   successMessage() {
     setTimeout(() => {
       this.setState({
-        formSuccess: ''
+        formSuccess: ""
       });
     }, 2000);
   }
   render() {
     return (
       <div>
-        <div className={classNames('modal', this.state.isActive)}>
+        <div className={classNames("modal", this.state.isActive)}>
           <div className="modal-background" />
           <div className="modal-card">
             <form onSubmit={event => this.submitForm(event)}>
               <header className="modal-card-head">
                 <p className="modal-card-title has-text-centered">
-                  Please, leave your e-mail I will contact you ASAP
+                  Please, leave your details
                 </p>
               </header>
               <section className="modal-card-body">
@@ -140,8 +179,18 @@ class ContactMe extends Component {
                   <label class="label">Email</label>
                   <div class="control has-icons-left has-icons-right">
                     <FormField
-                      id={'email'}
+                      id={"email"}
                       formdata={this.state.formdata.email}
+                      change={element => this.updateForm(element)}
+                    />
+                    <FormField
+                      id={"name"}
+                      formdata={this.state.formdata.name}
+                      change={element => this.updateForm(element)}
+                    />
+                    <FormField
+                      id={"country"}
+                      formdata={this.state.formdata.country}
                       change={element => this.updateForm(element)}
                     />
                     {this.state.formError ? (

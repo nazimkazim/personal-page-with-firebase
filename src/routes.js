@@ -12,6 +12,7 @@ import Dashboard from './Components/admin/Dashboard';
 import AdminExperience from './Components/admin/experience/index';
 import AddEditExperience from './Components/admin/experience/addEditExperience';
 import AdminEducation from './Components/admin/education/index';
+import DisplayMessages from './Components/admin/messages/messages';
 import addEditMainEducation from './Components/admin/education/addEditMainEducation';
 import addEditAdditionalEducation from './Components/admin/education/addEditAdditionalEducation';
 import AdminReviews from './Components/admin/reviews';
@@ -136,6 +137,12 @@ const Routes = props => {
           path="/admin_photos"
           exact
           component={DisplayPhotos}
+        />
+        <PrivateRoutes
+          {...props}
+          path="/admin_messages"
+          exact
+          component={DisplayMessages}
         />
         <PrivateRoutes
           {...props}
