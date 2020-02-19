@@ -53,7 +53,7 @@ class DisplayMessages extends Component {
               .remove()
               .then(() => {
                 this.successForm("Removed successfully");
-                this.props.history.push("/admin_photos");
+                this.props.history.push("/admin_messages");
               });
           }
         },
@@ -96,31 +96,38 @@ class DisplayMessages extends Component {
                 ""
               )}
             </div>
-            <div className="columns is-multiline" style={{ marginTop: "30px" }}>
-              <ul>
-                {this.state.promotions
-                  ? this.state.promotions.map((promotion, i) => (
-                      <li
-                        key={i}
-                        className="column is-3 card"
-                        id="exp-cell-company"
-                        style={{ margin: "3px" }}
-                      >
-                        <span>{promotion.name}</span>
-                        <span>{promotion.email}</span>
-                        <span>{promotion.country}</span>
-                        <span
-                          className="delete-icon"
-                          onClick={event => {
-                            this.deleteItem(event, promotion);
-                          }}
-                        >
-                          <i class="fa fa-trash" aria-hidden="true" />
-                        </span>
-                      </li>
-                    ))
-                  : null}
-              </ul>
+            <div className="columns" style={{ marginTop: "30px" }}>
+              <div className="column">
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th title="Name">Name</th>
+                      <th title="Email">email</th>
+                      <th title="Country">country</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.state.promotions
+                      ? this.state.promotions.map((promotion, i) => (
+                          <tr>
+                            <td>{promotion.name}</td>
+                            <td>{promotion.email}</td>
+                            <td>
+                              {promotion.country}
+                              <span
+                                onClick={event => {
+                                  this.deleteItem(event, promotion);
+                                }}
+                              >
+                                <i class="fa fa-trash" aria-hidden="true" />
+                              </span>
+                            </td>
+                          </tr>
+                        ))
+                      : null}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </React.Fragment>

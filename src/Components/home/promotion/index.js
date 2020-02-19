@@ -52,14 +52,6 @@ class ContactMe extends Component {
         },
         valid: "false",
         validationMessage: ""
-      },
-      checked: {
-        value: "false",
-        validation: {
-          required: false
-        },
-        valid: "false",
-        validationMessage: ""
       }
     }
   };
@@ -138,9 +130,6 @@ class ContactMe extends Component {
     };
 
     for (let key in newFormdata) {
-      if (key === "checked") {
-        newFormdata[key].value = "false";
-      }
       newFormdata[key].value = "";
       newFormdata[key].valid = false;
       newFormdata[key].validationMessage = "";
@@ -230,7 +219,7 @@ class ContactMe extends Component {
             className="button is-success is-medium"
             onClick={event => this.modalOpen(event)}
           >
-            Contact me
+            Arrange a free 20 minutes online lesson
           </button>
         </div>
       </div>
