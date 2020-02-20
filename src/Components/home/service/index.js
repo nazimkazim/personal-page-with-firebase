@@ -1,17 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Service = () => {
-  const serviceCardStyle = {
-    width: '300px',
-    height: '300px',
-    margin: '0 auto',
-    boxShadow: `0px 7px 19px -2px rgba(0,0,0,0.44)`
-  };
-
   const margin = {
-    marginTop: '50px',
-    marginBottom: '50px'
+    marginTop: "50px",
+    marginBottom: "50px"
   };
 
   return (
@@ -30,8 +23,8 @@ const Service = () => {
             </h2>
             <div className="columns is-vcentered">
               <div className="column">
-                <div style={serviceCardStyle}>
-                  <h3 className="has-text-centered" style={{ padding: '30px' }}>
+                <div className="service-box">
+                  <h3 className="has-text-centered" style={{ padding: "20px" }}>
                     <span className="is-size-3 is-uppercase has-text-weight-bold">
                       English
                     </span>
@@ -52,15 +45,17 @@ const Service = () => {
                   </ul>
                   <div
                     className="has-text-centered"
-                    style={{ marginTop: '15px' }}
+                    style={{ marginTop: "15px" }}
                   >
-                    <a class="button is-info">Learn more</a>
+                    <Link to="/" className="button is-info">
+                      Learn more
+                    </Link>
                   </div>
                 </div>
               </div>
               <div className="column">
-                <div style={serviceCardStyle}>
-                  <h3 className="has-text-centered" style={{ padding: '30px' }}>
+                <div className="service-box">
+                  <h3 className="has-text-centered" style={{ padding: "20px" }}>
                     <span className="is-size-3 is-uppercase has-text-weight-bold">
                       Russian
                     </span>
@@ -81,17 +76,17 @@ const Service = () => {
                   </ul>
                   <div
                     className="has-text-centered"
-                    style={{ marginTop: '15px' }}
+                    style={{ marginTop: "15px" }}
                   >
-                    <Link to="/detailed/russian" class="button is-info">
+                    <Link to="/detailed/russian" className="button is-info">
                       Learn more
                     </Link>
                   </div>
                 </div>
               </div>
               <div className="column">
-                <div style={serviceCardStyle}>
-                  <h3 className="has-text-centered" style={{ padding: '30px' }}>
+                <div className="service-box">
+                  <h3 className="has-text-centered" style={{ padding: "20px" }}>
                     <span className="is-size-3 is-uppercase has-text-weight-bold">
                       Programming Skills
                     </span>
@@ -109,9 +104,11 @@ const Service = () => {
                   </ul>
                   <div
                     className="has-text-centered"
-                    style={{ marginTop: '15px' }}
+                    style={{ marginTop: "15px" }}
                   >
-                    <a class="button is-info">Learn more</a>
+                    <Link to="/" className="button is-info">
+                      Learn more
+                    </Link>
                   </div>
                 </div>
               </div>

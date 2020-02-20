@@ -215,11 +215,14 @@ class ContactMe extends Component {
         </div>
 
         <div className="has-text-centered">
+          <p className="promotion-title has-text-weight-semibold is-uppercase has-text-grey-darker">
+            If you want to try a 20 minutes free demo lesson
+          </p>
           <button
             className="button is-success is-medium"
             onClick={event => this.modalOpen(event)}
           >
-            Arrange a free 20 minutes online lesson
+            Click here
           </button>
         </div>
       </div>
